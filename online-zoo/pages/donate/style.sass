@@ -268,12 +268,24 @@ h1
     background-image: url('../../assets/icons/dollar.svg')
     background-repeat: no-repeat
     background-position: 248px 17px
+    color: black
+    &::-webkit-outer-spin-button
+        -webkit-appearance: none
+        margin: 0
+    &::-webkit-inner-spin-button
+        -webkit-appearance: none
+        margin: 0
     &::placeholder
         color: #929699
         font-weight: 400
         font-size: 15px
         line-height: 22.4px
         letter-spacing: 0.3px
+    &:focus
+        background: none
+        background-image: url('../../assets/icons/dollar.svg')
+        background-repeat: no-repeat
+        background-position: 248px 17px
 
 .form2
     float: left

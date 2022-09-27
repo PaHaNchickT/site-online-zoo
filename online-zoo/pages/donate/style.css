@@ -352,6 +352,17 @@ h1 {
   background-image: url("../../assets/icons/dollar.svg");
   background-repeat: no-repeat;
   background-position: 248px 17px;
+  color: black;
+}
+
+.form1 > input::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.form1 > input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }
 
 .form1 > input::-webkit-input-placeholder {
@@ -384,6 +395,13 @@ h1 {
   font-size: 15px;
   line-height: 22.4px;
   letter-spacing: 0.3px;
+}
+
+.form1 > input:focus {
+  background: none;
+  background-image: url("../../assets/icons/dollar.svg");
+  background-repeat: no-repeat;
+  background-position: 248px 17px;
 }
 
 .form2 {
