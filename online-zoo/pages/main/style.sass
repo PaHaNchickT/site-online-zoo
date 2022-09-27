@@ -13,11 +13,11 @@ header
     padding: 0 13.75%
     align-items: center
 
-ul, p, h1, h2, h3, h4, h5, h6
+ul, p, h1, h2, h3, h4, h5, h6, nav
     margin: 0
     
 
-ul
+.menu
     display: flex
     flex-basis: 472px
     justify-content: space-between
@@ -470,6 +470,7 @@ h4
 
 .slider-head
     margin-bottom: 11px
+    background-repeat: no-repeat
 
 .slider-itms > div > .p5
     width: 237px
@@ -479,6 +480,15 @@ h4
     font-size: 15px
     line-height: 18px
     color: gray
+
+.user1
+    background-image: url('../../assets/images/user1.png')
+.user2
+    background-image: url('../../assets/images/user2.png')
+.user3
+    background-image: url('../../assets/images/user3.png')
+.user4
+    background-image: url('../../assets/images/user4.png')
 
 .slider-btn
     width: 599px
@@ -513,3 +523,111 @@ h4
     font-size: 15px
     line-height: 22.4px
     letter-spacing: -0.3px
+
+    /////////////////////////////////////////////footer//////////////////////////////////////////
+
+footer
+    height: 393px
+    background-color: black
+    padding: 0 220px
+    display: flex
+    align-items: flex-end
+    padding-bottom: 50px
+    justify-content: space-between
+
+.left
+    flex-basis: 298px
+    margin-right: 66px
+
+.left > div
+    color: white
+    width: 80px
+
+.btn5
+    font-weight: 500
+    font-size: 15px
+    line-height: 22.4px
+    color: white
+    background: linear-gradient(113.96deg, #F9804B 1.49%, #FE9013 101.44%)
+    border-radius: 5px
+    border: none
+    width: 298px
+    height: 54px
+    margin-top: 70px
+    margin-bottom: 35px 
+    letter-spacing: -0.3px
+
+.social > li
+    color: white
+    list-style: none
+    font-weight: 400
+    font-size: 16px
+    line-height: 22.4px
+    height: 26px
+    padding-left: 38px
+    display: flex
+    align-items: flex-end
+    margin-top: 10px
+    background-repeat: no-repeat
+
+ul
+    padding: 0
+
+.face
+    background-image: url('../../assets/images/fb.png')
+.twit
+    background-image: url('../../assets/images/tw.png')
+.inst
+    background-image: url('../../assets/images/in.png')
+.yotu
+    background-image: url('../../assets/images/yb.png')
+
+.center
+    display: flex
+    flex-basis: 362px
+    justify-content: space-between
+    padding: 0
+    list-style: none
+
+.right > h5
+    color: white
+    margin-bottom: 14px
+
+.right > p
+    color: white
+    font-weight: 100
+    font-size: 16px
+    line-height: 20.8px
+    margin-top: 10px
+    margin-left: 140px
+
+form
+    height: 42px
+    width: 369px
+    margin-bottom: 216px
+
+input
+    width: 214px
+    height: 38px
+    background-color: black
+    border: 1px solid orange
+    padding-left: 10px
+    margin-right: 8px
+    &::placeholder
+        color: #BDBDBD
+        font-weight: 400
+        font-size: 15px
+        line-height: 22.4px
+        letter-spacing: 0.3px
+
+form > button
+    width: 129px
+    height: 42px
+    border: 1px solid #4B9200
+    color: #4B9200
+    border-radius: 5px
+    background: #F1F3F2
+    font-weight: 400
+    font-size: 15px
+    line-height: 22.4px
+    letter-spacing: 0.3px
