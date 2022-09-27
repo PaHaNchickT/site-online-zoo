@@ -10,19 +10,19 @@
 </head>
 
 <body>
-    <header>
+    <header id="home">
         <div class="logo">
-            <p class="petstory">PetStory <br> online</p>
+            <p class="petstory"><a href="../main/index.html">PetStory <br> online</a></p> 
         </div>
         <nav class="menu">
             <li class="about">About</li>
             <li class="map"><a href="">Map</a></li>
             <li class="zoos"><a href="">Zoos</a></li>
-            <li class="donate"><a href="">Donate</a></li>
+            <li class="donate"><a href="../donate/index.html">Donate</a></li>
             <li class="contact"><a href="">Contact us</a></li>
         </nav>
         <div class="empty"></div>
-        <p class="by">Designed by ©</p>
+        <p class="by"><a href="https://www.figma.com/file/ypzT9idgAILaSRVRmDAJxn/online-zoo-3-weeks">Designed by ©</a></p> 
     </header>
 
     <section class="section1">
@@ -108,7 +108,7 @@
             <p class="p3">During a time when the COVID-19 epidemic is touching all of our lives, we’re proud and glad
                 that people around the world find joy in PetStory.</p>
             <p class="p1">Even though the zoo has reopened, we need you now more than ever to help us deal with these
-                problems. Please consider <br> a gift to our <span>Emergency Support Fund</span> .</p>
+                problems. Please consider <br> a gift to our <span><a href="../donate/index.html">Emergency Support Fund</a></span> .</p> 
             <h4>How it works</h4>
             <div class="items">
                 <div class="itm1">
@@ -133,7 +133,7 @@
                 </div>
             </div>
         </div>
-        <button class="btn3">FEED A FRIEND NOW</button>
+        <button class="btn3" onclick="document.location='../donate/index.html'">FEED A FRIEND NOW</button>
     </section>
 
     <section class="section4">
@@ -208,14 +208,14 @@
     <footer>
         <div class="left">
             <div class="logo">
-                <p class="petstory">PetStory <br> online</p>
+                <p class="petstory"><a href="#home">PetStory <br> online</a></p> 
             </div>
-            <button class="btn5">DONATE FOR VOLUNTEERS</button>
+            <button class="btn5" onclick="document.location='../donate/index.html'">DONATE FOR VOLUNTEERS</button>
             <ul class="social">
-                <li class="face">Facebook</li>
-                <li class="twit">Twitter</li>
-                <li class="inst">Instagram</li>
-                <li class="yotu">YouTube</li>
+                <li onclick="location.href = 'https://facebook.com'" class="face">Facebook</li> 
+                <li onclick="location.href = 'https://twitter.com'" class="twit">Twitter</li> 
+                <li onclick="location.href = 'https://instagram.com'" class="inst">Instagram</li> 
+                <li onclick="location.href = 'https://youtube.com'" class="yotu">YouTube</li> 
             </ul>
         </div>
         <nav class="center">
@@ -227,7 +227,7 @@
         <div class="right">
             <h5>Subscribe to our news</h5>
             <form>
-                <input type="text" placeholder="Enter your email">
+                <input type="email" placeholder="Enter your email">
                 <button>Submit</button>
             </form>
             <p>Designed by Alisa Samborskaya</p>

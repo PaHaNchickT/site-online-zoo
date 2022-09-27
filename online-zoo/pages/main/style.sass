@@ -16,6 +16,13 @@ header
 ul, p, h1, h2, h3, h4, h5, h6, nav
     margin: 0
     
+button
+    &:hover
+        background: #E47209
+        cursor: pointer
+    &:active
+        background-color: #4B9200
+
 
 .menu
     display: flex
@@ -136,7 +143,7 @@ h1 > span
 
 .palm
     position: absolute
-    width: 880px
+    width: 400px
     height: 460px
     left: 0px
     top: 2149px
@@ -265,6 +272,12 @@ h6
 .buttons
     position: relative
 
+.buttons > div
+    &:hover
+        cursor: pointer
+    &:active
+        background: #4B9200
+
 .btnL
     border-radius: 50%
     position: absolute
@@ -349,6 +362,13 @@ h3
 .p1 > span
     border-bottom: 2px solid #FE9013
     line-height: 27px
+    &:hover
+        border-bottom: 2px solid green
+
+.p1 > span > a
+    color: black
+    &:hover
+        color: green
 
 h4
     font-weight: 400
@@ -508,6 +528,11 @@ h4
     margin-top: 1px
     width: 115.19px
     border-radius: 5px
+    &:hover
+        background-color: #E47209
+        cursor: pointer
+    &:active
+        background-color: #4B9200
 
 .btn4
     width: 298px
@@ -569,18 +594,32 @@ footer
     align-items: flex-end
     margin-top: 10px
     background-repeat: no-repeat
+    &:hover
+        cursor: pointer
+        color: green
+
 
 ul
     padding: 0
 
+ul > a
+
 .face
     background-image: url('../../assets/images/fb.png')
+    &:hover
+        background-image: url('../../assets/images/fb-hover.png')
 .twit
     background-image: url('../../assets/images/tw.png')
+    &:hover
+        background-image: url('../../assets/images/tw-hover.png')
 .inst
     background-image: url('../../assets/images/in.png')
+    &:hover
+        background-image: url('../../assets/images/in-hover.png')
 .yotu
     background-image: url('../../assets/images/yb.png')
+    &:hover
+        background-image: url('../../assets/images/yb-hover.png')
 
 .center
     display: flex
@@ -613,12 +652,37 @@ input
     border: 1px solid orange
     padding-left: 10px
     margin-right: 8px
+    color: white
+    font-weight: 400
+    font-size: 15px
+    line-height: 22.4px
+    letter-spacing: 0.3px
     &::placeholder
         color: #BDBDBD
         font-weight: 400
         font-size: 15px
         line-height: 22.4px
         letter-spacing: 0.3px
+    &:focus
+        background-color: white
+    // &:valid
+    //     color: green
+    //     border: 1px solid green
+    // &:invalid
+    //     color: red
+    //     border: 1px solid green
+    
+// input:invalid, input:focus
+//     border: 1px solid red
+//     color: red
+
+// input:valid, input:focus
+//     border: 1px solid green
+//     color: green
+
+// input:invalid, form > button
+//     background: red
+
 
 form > button
     width: 129px
@@ -631,3 +695,4 @@ form > button
     font-size: 15px
     line-height: 22.4px
     letter-spacing: 0.3px
+    

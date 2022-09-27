@@ -22,6 +22,15 @@ ul, p, h1, h2, h3, h4, h5, h6, nav {
   margin: 0;
 }
 
+button:hover {
+  background: #E47209;
+  cursor: pointer;
+}
+
+button:active {
+  background-color: #4B9200;
+}
+
 .menu {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -170,7 +179,7 @@ h1 > span {
 
 .palm {
   position: absolute;
-  width: 880px;
+  width: 400px;
   height: 460px;
   left: 0px;
   top: 2149px;
@@ -345,6 +354,14 @@ h6 {
   position: relative;
 }
 
+.buttons > div:hover {
+  cursor: pointer;
+}
+
+.buttons > div:active {
+  background: #4B9200;
+}
+
 .btnL {
   border-radius: 50%;
   position: absolute;
@@ -446,6 +463,18 @@ h3 {
 .p1 > span {
   border-bottom: 2px solid #FE9013;
   line-height: 27px;
+}
+
+.p1 > span:hover {
+  border-bottom: 2px solid green;
+}
+
+.p1 > span > a {
+  color: black;
+}
+
+.p1 > span > a:hover {
+  color: green;
 }
 
 h4 {
@@ -660,6 +689,15 @@ h4 {
   border-radius: 5px;
 }
 
+.slider-btn > div > div:hover {
+  background-color: #E47209;
+  cursor: pointer;
+}
+
+.slider-btn > div > div:active {
+  background-color: #4B9200;
+}
+
 .btn4 {
   width: 298px;
   height: 54px;
@@ -737,6 +775,11 @@ footer {
   background-repeat: no-repeat;
 }
 
+.social > li:hover {
+  cursor: pointer;
+  color: green;
+}
+
 ul {
   padding: 0;
 }
@@ -745,16 +788,32 @@ ul {
   background-image: url("../../assets/images/fb.png");
 }
 
+.face:hover {
+  background-image: url("../../assets/images/fb-hover.png");
+}
+
 .twit {
   background-image: url("../../assets/images/tw.png");
+}
+
+.twit:hover {
+  background-image: url("../../assets/images/tw-hover.png");
 }
 
 .inst {
   background-image: url("../../assets/images/in.png");
 }
 
+.inst:hover {
+  background-image: url("../../assets/images/in-hover.png");
+}
+
 .yotu {
   background-image: url("../../assets/images/yb.png");
+}
+
+.yotu:hover {
+  background-image: url("../../assets/images/yb-hover.png");
 }
 
 .center {
@@ -797,6 +856,11 @@ input {
   border: 1px solid orange;
   padding-left: 10px;
   margin-right: 8px;
+  color: white;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 22.4px;
+  letter-spacing: 0.3px;
 }
 
 input::-webkit-input-placeholder {
@@ -829,6 +893,10 @@ input::placeholder {
   font-size: 15px;
   line-height: 22.4px;
   letter-spacing: 0.3px;
+}
+
+input:focus {
+  background-color: white;
 }
 
 form > button {
