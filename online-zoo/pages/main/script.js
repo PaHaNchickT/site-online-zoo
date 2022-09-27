@@ -30,3 +30,4 @@ document.querySelectorAll('.pag > div').forEach(e => {
         e.style.backgroundPosition = '0 0'
     })
 })
+

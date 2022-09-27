@@ -5,6 +5,18 @@ body {
   font-family: Roboto;
 }
 
+.btn1:hover, .btn5:hover {
+  background: #E47209;
+}
+
+.btn1:active, .btn5:active {
+  background-color: #4B9200;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
 header {
   background-color: black;
   display: -webkit-box;
@@ -235,6 +247,7 @@ h1 {
 
 .content > p {
   color: black;
+  text-align: left;
 }
 
 .count {
@@ -246,8 +259,7 @@ h1 {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  padding-left: 16px;
-  padding-right: 19px;
+  padding-right: 15px;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
@@ -256,11 +268,25 @@ h1 {
           align-items: center;
 }
 
+.count > div {
+  width: 40px;
+  height: 40px;
+  margin-right: -12px;
+  cursor: pointer;
+}
+
+.check {
+  background-image: url("../../assets/icons/roller_icon.svg");
+}
+
 .point {
   width: 10px;
   height: 10px;
   background-color: #FFEE2E;
   border-radius: 50%;
+  position: relative;
+  top: 15px;
+  left: 15px;
 }
 
 .price {
@@ -323,6 +349,9 @@ h1 {
   padding: auto 0 auto 9px;
   background: none;
   border: 1px solid #929699;
+  background-image: url("../../assets/icons/dollar.svg");
+  background-repeat: no-repeat;
+  background-position: 248px 17px;
 }
 
 .form1 > input::-webkit-input-placeholder {
@@ -389,6 +418,7 @@ h1 {
   border: 1px solid #FE9013;
   border-radius: 50%;
   margin-right: 10px;
+  cursor: pointer;
 }
 
 .form2 > input:checked + label::before {
@@ -418,7 +448,7 @@ h1 {
   letter-spacing: -0.3px;
 }
 
-.content > .p2 {
+.content > .p-center {
   text-align: center;
 }
 
@@ -536,8 +566,15 @@ ul {
   list-style: none;
 }
 
+.center > .about {
+  color: white;
+}
+
 .right > h5 {
   color: white;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 28.8px;
   margin-bottom: 14px;
 }
 
@@ -550,7 +587,7 @@ ul {
   margin-left: 140px;
 }
 
-form {
+.right > form {
   height: 42px;
   width: 369px;
   margin-bottom: 216px;
