@@ -10,9 +10,9 @@
 </head>
 
 <body>
-    <header>
+    <header id="home">
         <div class="logo">
-            <p class="petstory">PetStory <br> online</p>
+            <p class="petstory"><a href="../main/index.html">PetStory <br> online</a></p> 
         </div>
         <nav class="menu">
             <li class="about"><a href="">About</a></li>
@@ -103,14 +103,14 @@
     <footer>
         <div class="left">
             <div class="logo">
-                <p class="petstory">PetStory <br> online</p>
+                <p class="petstory"><a href="#home">PetStory <br> online</a></p> 
             </div>
-            <button class="btn5">DONATE FOR VOLUNTEERS</button>
+            <button class="btn5" onclick="document.location='../donate/index.html'">DONATE FOR VOLUNTEERS</button>
             <ul class="social">
-                <li class="face">Facebook</li>
-                <li class="twit">Twitter</li>
-                <li class="inst">Instagram</li>
-                <li class="yotu">YouTube</li>
+                <li onclick="location.href = 'https://facebook.com'" class="face">Facebook</li> 
+                <li onclick="location.href = 'https://twitter.com'" class="twit">Twitter</li> 
+                <li onclick="location.href = 'https://instagram.com'" class="inst">Instagram</li> 
+                <li onclick="location.href = 'https://youtube.com'" class="yotu">YouTube</li> 
             </ul>
         </div>
         <nav class="center">
@@ -122,7 +122,7 @@
         <div class="right">
             <h5>Subscribe to our news</h5>
             <form>
-                <input type="text" placeholder="Enter your email">
+                <input type="email" placeholder="Enter your email">
                 <button>Submit</button>
             </form>
             <p>Designed by Alisa Samborskaya</p>

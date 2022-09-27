@@ -220,7 +220,9 @@ h5
     background-repeat: no-repeat
     display: flex
     align-items: flex-end
-
+    overflow: hidden
+    background-size: 100.5%
+    transition: 0.5s
 
 .title
     background-color: white
@@ -231,6 +233,9 @@ h5
     justify-content: center
     border-bottom-left-radius: 5px
     border-bottom-right-radius: 5px
+    position: relative
+    top: 50px
+    transition: 0.5s
 
 h6
     font-weight: 500
@@ -665,30 +670,12 @@ input
         letter-spacing: 0.3px
     &:focus
         background-color: white
-    // &:valid
-    //     color: green
-    //     border: 1px solid green
-    // &:invalid
-    //     color: red
-    //     border: 1px solid green
-    
-// input:invalid, input:focus
-//     border: 1px solid red
-//     color: red
-
-// input:valid, input:focus
-//     border: 1px solid green
-//     color: green
-
-// input:invalid, form > button
-//     background: red
-
 
 form > button
     width: 129px
     height: 42px
-    border: 1px solid #4B9200
-    color: #4B9200
+    border: 1px solid black
+    color: black
     border-radius: 5px
     background: #F1F3F2
     font-weight: 400

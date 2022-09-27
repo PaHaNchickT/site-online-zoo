@@ -482,6 +482,11 @@ footer {
   background-repeat: no-repeat;
 }
 
+.social > li:hover {
+  cursor: pointer;
+  color: green;
+}
+
 ul {
   padding: 0;
 }
@@ -490,16 +495,32 @@ ul {
   background-image: url("../../assets/images/fb.png");
 }
 
+.face:hover {
+  background-image: url("../../assets/images/fb-hover.png");
+}
+
 .twit {
   background-image: url("../../assets/images/tw.png");
+}
+
+.twit:hover {
+  background-image: url("../../assets/images/tw-hover.png");
 }
 
 .inst {
   background-image: url("../../assets/images/in.png");
 }
 
+.inst:hover {
+  background-image: url("../../assets/images/in-hover.png");
+}
+
 .yotu {
   background-image: url("../../assets/images/yb.png");
+}
+
+.yotu:hover {
+  background-image: url("../../assets/images/yb-hover.png");
 }
 
 .center {
@@ -529,22 +550,27 @@ ul {
   margin-left: 140px;
 }
 
-.right > form {
+form {
   height: 42px;
   width: 369px;
   margin-bottom: 216px;
 }
 
-.right > form > input {
+input {
   width: 214px;
   height: 38px;
   background-color: black;
   border: 1px solid orange;
   padding-left: 10px;
   margin-right: 8px;
+  color: white;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 22.4px;
+  letter-spacing: 0.3px;
 }
 
-.right > form > input::-webkit-input-placeholder {
+input::-webkit-input-placeholder {
   color: #BDBDBD;
   font-weight: 400;
   font-size: 15px;
@@ -552,7 +578,7 @@ ul {
   letter-spacing: 0.3px;
 }
 
-.right > form > input:-ms-input-placeholder {
+input:-ms-input-placeholder {
   color: #BDBDBD;
   font-weight: 400;
   font-size: 15px;
@@ -560,7 +586,7 @@ ul {
   letter-spacing: 0.3px;
 }
 
-.right > form > input::-ms-input-placeholder {
+input::-ms-input-placeholder {
   color: #BDBDBD;
   font-weight: 400;
   font-size: 15px;
@@ -568,7 +594,7 @@ ul {
   letter-spacing: 0.3px;
 }
 
-.right > form > input::placeholder {
+input::placeholder {
   color: #BDBDBD;
   font-weight: 400;
   font-size: 15px;
@@ -576,11 +602,15 @@ ul {
   letter-spacing: 0.3px;
 }
 
-.right > form > button {
+input:focus {
+  background-color: white;
+}
+
+form > button {
   width: 129px;
   height: 42px;
-  border: 1px solid #4B9200;
-  color: #4B9200;
+  border: 1px solid black;
+  color: black;
   border-radius: 5px;
   background: #F1F3F2;
   font-weight: 400;

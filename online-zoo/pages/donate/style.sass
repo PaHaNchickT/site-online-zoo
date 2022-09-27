@@ -345,18 +345,32 @@ footer
     align-items: flex-end
     margin-top: 10px
     background-repeat: no-repeat
+    &:hover
+        cursor: pointer
+        color: green
+
 
 ul
     padding: 0
 
+ul > a
+
 .face
     background-image: url('../../assets/images/fb.png')
+    &:hover
+        background-image: url('../../assets/images/fb-hover.png')
 .twit
     background-image: url('../../assets/images/tw.png')
+    &:hover
+        background-image: url('../../assets/images/tw-hover.png')
 .inst
     background-image: url('../../assets/images/in.png')
+    &:hover
+        background-image: url('../../assets/images/in-hover.png')
 .yotu
     background-image: url('../../assets/images/yb.png')
+    &:hover
+        background-image: url('../../assets/images/yb-hover.png')
 
 .center
     display: flex
@@ -377,30 +391,37 @@ ul
     margin-top: 10px
     margin-left: 140px
 
-.right > form
+form
     height: 42px
     width: 369px
     margin-bottom: 216px
 
-.right > form > input
+input
     width: 214px
     height: 38px
     background-color: black
     border: 1px solid orange
     padding-left: 10px
     margin-right: 8px
+    color: white
+    font-weight: 400
+    font-size: 15px
+    line-height: 22.4px
+    letter-spacing: 0.3px
     &::placeholder
         color: #BDBDBD
         font-weight: 400
         font-size: 15px
         line-height: 22.4px
         letter-spacing: 0.3px
+    &:focus
+        background-color: white
 
-.right > form > button
+form > button
     width: 129px
     height: 42px
-    border: 1px solid #4B9200
-    color: #4B9200
+    border: 1px solid black
+    color: black
     border-radius: 5px
     background: #F1F3F2
     font-weight: 400

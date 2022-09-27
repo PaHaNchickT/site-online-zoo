@@ -277,6 +277,10 @@ h5 {
   -webkit-box-align: end;
       -ms-flex-align: end;
           align-items: flex-end;
+  overflow: hidden;
+  background-size: 100.5%;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
 }
 
 .title {
@@ -295,6 +299,10 @@ h5 {
           justify-content: center;
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
+  position: relative;
+  top: 50px;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
 }
 
 h6 {
@@ -902,8 +910,8 @@ input:focus {
 form > button {
   width: 129px;
   height: 42px;
-  border: 1px solid #4B9200;
-  color: #4B9200;
+  border: 1px solid black;
+  color: black;
   border-radius: 5px;
   background: #F1F3F2;
   font-weight: 400;
