@@ -534,4 +534,129 @@ h4 {
   left: 40.6875%;
   letter-spacing: 0.55px;
 }
+
+.section4 {
+  height: 919px;
+  background-color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.leav {
+  position: absolute;
+  width: 160px;
+  height: 237px;
+  right: 0;
+  top: 4295px;
+  background-image: url("../../assets/images/leav_foto.png");
+  background-repeat: no-repeat;
+}
+
+.section4 > h4 {
+  margin-top: 140px;
+  text-align: center;
+  margin-bottom: 47px;
+}
+
+.slider-itms {
+  width: 1160px;
+  height: 391px;
+  margin-bottom: 21px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.slider-itms > div {
+  background: #F1F3F2;
+  border-radius: 20px;
+  width: 238px;
+  height: 362px;
+  background-image: radial-gradient(circle at 100% 100%, transparent 18px, #e4e4f5 18px, #e4e4f5 20px, transparent 20px), -webkit-gradient(linear, left top, right top, from(#e4e4f5), to(#f2b2f7)), radial-gradient(circle at 0% 100%, transparent 18px, #f2b2f7 18px, #f2b2f7 20px, transparent 20px), -webkit-gradient(linear, left top, left bottom, from(#f2b2f7), to(#fdc1b0)), radial-gradient(circle at 0% 0%, transparent 18px, #fdc1b0 18px, #fdc1b0 20px, transparent 20px), -webkit-gradient(linear, right top, left top, from(#fdc1b0), to(#f3b3f3)), radial-gradient(circle at 100% 0%, transparent 18px, #f3b3f3 18px, #f3b3f3 20px, transparent 20px), -webkit-gradient(linear, left bottom, left top, from(#f3b3f3), to(#e4e4f5));
+  background-image: radial-gradient(circle at 100% 100%, transparent 18px, #e4e4f5 18px, #e4e4f5 20px, transparent 20px), linear-gradient(to right, #e4e4f5, #f2b2f7), radial-gradient(circle at 0% 100%, transparent 18px, #f2b2f7 18px, #f2b2f7 20px, transparent 20px), linear-gradient(to bottom, #f2b2f7, #fdc1b0), radial-gradient(circle at 0% 0%, transparent 18px, #fdc1b0 18px, #fdc1b0 20px, transparent 20px), linear-gradient(to left, #fdc1b0, #f3b3f3), radial-gradient(circle at 100% 0%, transparent 18px, #f3b3f3 18px, #f3b3f3 20px, transparent 20px), linear-gradient(to top, #f3b3f3, #e4e4f5);
+  background-size: 20px 20px, calc(100% - 40px) 2px, 20px 20px, 2px calc(100% - 40px);
+  background-position: top left,top center,top right,center right, bottom right,bottom center,bottom left,center left;
+  background-repeat: no-repeat;
+  padding: 15px;
+}
+
+.p4 {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19.2px;
+}
+
+.slider-head > .p4, .slider-head > .p5 {
+  margin-left: 48px;
+}
+
+.slider-head > .p5 {
+  color: #BDBDBD;
+}
+
+.slider-head {
+  margin-bottom: 11px;
+}
+
+.slider-itms > div > .p5 {
+  width: 237px;
+}
+
+.p5 {
+  font-weight: 300;
+  font-size: 15px;
+  line-height: 18px;
+  color: gray;
+}
+
+.slider-btn {
+  width: 599px;
+  height: 8px;
+  background: -webkit-gradient(linear, left bottom, left top, from(#fdc1b0), to(#e5ccf2));
+  background: linear-gradient(to top, #fdc1b0, #e5ccf2);
+  border-radius: 5px;
+}
+
+.slider-btn > div {
+  width: 598.5px;
+  height: 7.5px;
+  background-color: #F5F7F6;
+  border-radius: 5px;
+}
+
+.slider-btn > div > div {
+  background-color: #FE9013;
+  height: 6px;
+  margin-top: 1px;
+  width: 115.19px;
+  border-radius: 5px;
+}
+
+.btn4 {
+  width: 298px;
+  height: 54px;
+  background: linear-gradient(113.96deg, #F9804B 1.49%, #FE9013 101.44%);
+  border-radius: 5px;
+  color: white;
+  margin-top: 31px;
+  margin-left: 220px;
+  -ms-flex-item-align: start;
+      align-self: flex-start;
+  border: none;
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 22.4px;
+  letter-spacing: -0.3px;
+}
 /*# sourceMappingURL=style.css.map */
