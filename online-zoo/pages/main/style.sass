@@ -1,17 +1,33 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
+@mixin flex($just: flex-start, $align: stretch)
+    display: flex
+    justify-content: $just
+    align-items: $align
+
+@mixin font($w, $s, $h, $a: left, $ls: 0)
+    font-weight: $w
+    font-size: $s
+    line-height: $h
+    text-align: $a
+    letter-spacing: $ls
+
+@mixin img($s, $p: 0 0)
+    background-image: url($s)
+    background-repeat: no-repeat
+    background-position: $p
+
 body
     margin: 0
     padding: 0
     font-family: Roboto
 
 header
+    @include flex('', center)
     background-color: black
-    display: flex
     color: white
     min-height: 80px
     padding: 0 13.75%
-    align-items: center
 
 ul, p, h1, h2, h3, h4, h5, h6, nav
     margin: 0
@@ -25,9 +41,8 @@ button
 
 
 .menu
-    display: flex
+    @include flex(space-between)
     flex-basis: 472px
-    justify-content: space-between
     padding: 0
     margin-left: 64px
     list-style: none
@@ -36,9 +51,7 @@ button
     color: orange
 
 li, .by
-    font-weight: 500
-    font-size: 16px
-    line-height: 22.4px
+    @include font(500, 16px, 22.4px)
 
 a
     &:link, &:active, &:visited
@@ -49,24 +62,16 @@ a
         cursor: pointer
 
 .logo
+    @include flex(center, center)
+    @include img('../../assets/icons/bamboo.svg', 8.5px 22px)
     flex-basis: 80px
     height: 49px
     border: 1px solid white
     align-self: center
-    display: flex
-    justify-content: center
-    align-items: center
     border-radius: 2px
-    background-image: url('../../assets/icons/bamboo.svg')
-    background-repeat: no-repeat
-    background-position-x: 8.5px
-    background-position-y: 22px
 
 .petstory
-    font-weight: 400
-    font-size: 19.01px
-    line-height: 22.82px
-    text-align: center
+    @include font(400, 19.01px, 22.82px, center)
 
 .by
     text-align: right
@@ -82,16 +87,12 @@ div > p
 ////////////////////////////////////////////section1///////////////////////////////////////////
 
 .section1
+    @include img('../../assets/images/Giant Panda.png', 0 -80px)
     min-height: 700px
-    background-image: url('../../assets/images/Giant Panda.png')
-    background-position-y: -80px
 
 h1
+    @include font(700, 106.5px, 79.87px, center)
     position: relative
-    font-weight: 700
-    font-size: 106.5px
-    line-height: 79.87px
-    text-align: center
     color: white
     z-index: 6
     width: 500.31px
@@ -112,10 +113,7 @@ h1 > span
     z-index: 5
 
 .watch
-    font-weight: 500
-    font-size: 16px
-    line-height: 22.4px
-    text-align: center
+    @include font(500, 15px, 22.4px, center, 0.3px)
     width: 298px
     height: 54px
     background: linear-gradient(113.96deg, #F9804B 1.49%, #FE9013 101.44%)
@@ -134,43 +132,38 @@ h1 > span
     margin-top: 140px
 
 .strel
+    @include img('../../assets/images/strelitzia 1.png')
     position: absolute
     width: 368px
     height: 275px
     right: 0px
     top: 2334px
-    background-image: url('../../assets/images/strelitzia 1.png')
 
 .palm
+    @include img('../../assets/images/palm_foto.png')
     position: absolute
     width: 400px
     height: 460px
     left: 0px
     top: 2149px
-    background-image: url('../../assets/images/palm_foto.png')
-    background-repeat: no-repeat
 
 .flow
+    @include img('../../assets/images/flower_foto1.png')
     position: absolute
     width: 204px
     height: 605px
     right: 0
     top: 792px
-    background-image: url('../../assets/images/flower_foto1.png')
-    background-repeat: no-repeat
 
 .oldman
     height: 403px
     margin: 0 13.6875% 180px 13.6875%
 
 .oldman-pic
+    @include img('../../assets/images/bamboo-cap.png')
     width: 609px
     height: 403px
     margin: 0
-    background-image: url('../../assets/images/bamboo-cap.png')
-    background-size: 100%
-    background-size: 100%
-    background-repeat: no-repeat
     float: left
 
 .oldman-article
@@ -178,59 +171,48 @@ h1 > span
     float: right
 
 h2
-    font-weight: 400
-    font-size: 46px
-    line-height: 57.6px
-    letter-spacing: 0.9px
+    @include font(400, 46px, 57.6px, '', 0.9px)
     margin-bottom: 20px
 
 .p1
-    font-weight: 400
-    font-size: 16px
-    line-height: 20.8px
+    @include font(400, 16px, 20.8px)
 
 .oldman-article > .p1
     margin-bottom: 54px
 
 h5
-    font-weight: 400
-    font-size: 24px
-    line-height: 28.8px
+    @include font(400, 24px, 28.8px)
     margin-bottom: 34px
 
 .p2
-    font-weight: 400
-    font-size: 16px
-    line-height: 22.4px
+    @include font(400, 16px, 22.4px)
 
 .pag
+    @include flex(space-between)
     margin: 0 13.6875% 80px 13.6875%
     width: 1158px
     height: 872px
-    display: flex
     flex-wrap: wrap
-    justify-content: space-between
     align-content: space-between
+    
 
 .pag > div
+    @include flex('', flex-end)
     width: 362px
     height: 422px
     border-radius: 5px
     border: 2px solid orange
     background-repeat: no-repeat
-    display: flex
-    align-items: flex-end
     overflow: hidden
     background-size: 100.5%
     transition: 0.5s
 
 .title
+    @include flex(center)
     background-color: white
     width: 100%
     height: 60px
-    display: flex
     flex-direction: column
-    justify-content: center
     border-bottom-left-radius: 5px
     border-bottom-right-radius: 5px
     position: relative
@@ -238,14 +220,10 @@ h5
     transition: 0.5s
 
 h6
-    font-weight: 500
-    font-size: 16px
-    line-height: 22.4px
+    @include font(500, 16px, 22.4px)
 
 .pag > div > div > p
-    font-weight: 300
-    font-size: 15px
-    line-height: 18px
+    @include font(300, 15px, 18px)
     margin-left: 16px
 
 h6
@@ -265,14 +243,10 @@ h6
     background-image: url('../../assets/images/animal6.png')
 
 .banana
-    background-image: url('../../assets/icons/banana-bamboo_icon.svg')
-    background-repeat: no-repeat
-    background-position: 321px 10px
+    @include img('../../assets/icons/banana-bamboo_icon.svg', 321px 10px)
 
 .fish
-    background-image: url('../../assets/icons/meet-fish_icon.svg')
-    background-repeat: no-repeat
-    background-position: 310px 8px
+    @include img('../../assets/icons/meet-fish_icon.svg', 310px 8px)
 
 .buttons
     position: relative
@@ -293,11 +267,9 @@ h6
     background: linear-gradient(113.96deg, #F9804B 1.49%, #FE9013 101.44%)
 
 .btnL > div, .btnR > div
-    background-image: url('../../assets/icons/arrow.svg')
+    @include img('../../assets/icons/arrow.svg', 50% 50%)
     width: 62px
     height: 62px
-    background-position: 50% 50%
-    background-repeat: no-repeat
 
 .btnR > div
     transform: rotate(180deg)
@@ -312,6 +284,7 @@ h6
     background: linear-gradient(113.96deg, #F9804B 1.49%, #FE9013 101.44%)
 
 .btn2
+    @include font(500, 15px, 22.4px, '', -0.3px)
     color: white
     border: none
     width: 298px
@@ -319,10 +292,6 @@ h6
     background: #FE9013
     border-radius: 25px
     margin-left: 40.6875%
-    font-weight: 500
-    font-size: 15px
-    line-height: 22.4px
-    letter-spacing: -0.3px
 
 ///////////////////////////////////////////////section 3////////////////////////////////////////////////
 
@@ -343,20 +312,15 @@ h6
     flex-direction: column
     
 h3
+    @include font(400, 48px, 57.6px, center)
     color: #FE9013
-    font-weight: 400
-    font-size: 48px
-    line-height: 57.6px
     margin-top: 41px
-    text-align: center
 
 .wrapper > h5
     margin: 30px 0 40px 99px
 
 .p3
-    font-weight: 500
-    font-size: 16px
-    line-height: 20.8px
+    @include font(500, 16px, 20.8px)
 
 .wrapper > .p3
     margin-left: 99px
@@ -376,29 +340,26 @@ h3
         color: green
 
 h4
-    font-weight: 400
-    font-size: 36px
-    line-height: 46.8px
+    @include font(400, 36px, 46.8px)
 
 .wrapper > h4
     text-align: center
     margin-bottom: 40px
 
 .items
+    @include flex(space-between)
     height: 244px
     width: 764px
     margin-left: 198px
-    display: flex
-    justify-content: space-between
 
 .items > div
     width: 168px
 
 .img
-    background-color: white
     height: 166px
     border-radius: 5px
     border: 1px solid orange
+    background-color: white
     background-repeat: no-repeat
     background-position: 50% 50%
 
@@ -418,8 +379,7 @@ h4
     background-image: url('../../assets/icons/monkey.svg')
 
 .itm2, .itm4
-    background-image: url('../../assets/icons/arrow2.svg')
-    background-repeat: no-repeat
+    @include img('../../assets/icons/arrow2.svg')
     
 .itm2
     background-position: 50% 29%
@@ -427,6 +387,7 @@ h4
     background-position: 50% 27%
 
 .btn3
+    @include font(500, 14px, 22.4px, '', 0.55px)
     position: relative
     width: 298px
     height: 54px
@@ -434,30 +395,24 @@ h4
     background: linear-gradient(113.96deg, #F9804B 1.49%, #FE9013 101.44%)
     border-radius: 25px
     color: white
-    font-weight: 500
-    font-size: 14px
-    line-height: 22.4px
     top: -112px
     left: 40.6875%
-    letter-spacing: 0.55px
 
 /////////////////////////////////////////////////section 4//////////////////////////////////////////////////
 
 .section4
+    @include flex('', center)
     height: 919px
     background-color: white
-    display: flex
     flex-direction: column
-    align-items: center
 
 .leav
+    @include img('../../assets/images/leav_foto.png')
     position: absolute
     width: 160px
     height: 237px
     right: 0
     top: 4295px
-    background-image: url('../../assets/images/leav_foto.png')
-    background-repeat: no-repeat
 
 .section4 > h4
     margin-top: 140px
@@ -465,11 +420,10 @@ h4
     margin-bottom: 47px
 
 .slider-itms
+    @include flex(space-between)
     width: 1160px
     height: 391px
     margin-bottom: 21px
-    display: flex
-    justify-content: space-between
 
 .slider-itms > div
     background: #F1F3F2
@@ -483,9 +437,7 @@ h4
     padding: 15px
 
 .p4
-    font-weight: 400
-    font-size: 16px
-    line-height: 19.2px
+    @include font(400, 16px, 19.2px)
 
 .slider-head > .p4, .slider-head > .p5
     margin-left: 48px
@@ -501,9 +453,7 @@ h4
     width: 237px
 
 .p5
-    font-weight: 300
-    font-size: 15px
-    line-height: 18px
+    @include font(300, 15px, 18px)
     color: gray
 
 .user1
@@ -540,30 +490,25 @@ h4
         background-color: #4B9200
 
 .btn4
+    @include font(500, 15px, 22.4px, '', -0.3px)
     width: 298px
     height: 54px
     background: linear-gradient(113.96deg, #F9804B 1.49%, #FE9013 101.44%)
     border-radius: 5px
     color: white
-    margin-top: 31px
-    margin-left: 220px
+    margin: 31px 0 0 220px
     align-self: flex-start
     border: none
-    font-weight: 500
-    font-size: 15px
-    line-height: 22.4px
-    letter-spacing: -0.3px
 
 /////////////////////////////////////////////footer//////////////////////////////////////////
 
 footer
+    @include flex(space-between, flex-end)
     height: 393px
     background-color: black
     padding: 0 220px
-    display: flex
-    align-items: flex-end
     padding-bottom: 50px
-    justify-content: space-between
+
 
 .left
     flex-basis: 298px
@@ -574,34 +519,28 @@ footer
     width: 80px
 
 .btn5
-    font-weight: 500
-    font-size: 15px
-    line-height: 22.4px
+    @include font(500, 15px, 22.4px, '', -0.3px)
     color: white
     background: linear-gradient(113.96deg, #F9804B 1.49%, #FE9013 101.44%)
     border-radius: 5px
     border: none
     width: 298px
     height: 54px
-    margin-top: 70px
-    margin-bottom: 35px 
-    letter-spacing: -0.3px
+    margin: 70px 0 35px
 
 .social > li
+    @include font(400, 16px, 22.4px)
     color: white
     list-style: none
-    font-weight: 400
-    font-size: 16px
-    line-height: 22.4px
     height: 26px
     padding-left: 38px
-    display: flex
-    align-items: flex-end
     margin-top: 10px
     background-repeat: no-repeat
+    @include flex('', flex-end)
     &:hover
         cursor: pointer
         color: green
+    
 
 
 ul
@@ -627,9 +566,8 @@ ul > a
         background-image: url('../../assets/images/yb-hover.png')
 
 .center
-    display: flex
+    @include flex(space-between)
     flex-basis: 362px
-    justify-content: space-between
     padding: 0
     list-style: none
 
@@ -638,12 +576,9 @@ ul > a
     margin-bottom: 14px
 
 .right > p
+    @include font(100, 16px, 20.8px)
     color: white
-    font-weight: 100
-    font-size: 16px
-    line-height: 20.8px
-    margin-top: 10px
-    margin-left: 140px
+    margin: 10px 0 0 140px
 
 form
     height: 42px
@@ -651,6 +586,7 @@ form
     margin-bottom: 216px
 
 input
+    @include font(400, 15px, 22.4px, '', 0.3px)
     width: 214px
     height: 38px
     background-color: black
@@ -658,28 +594,18 @@ input
     padding-left: 10px
     margin-right: 8px
     color: white
-    font-weight: 400
-    font-size: 15px
-    line-height: 22.4px
-    letter-spacing: 0.3px
     &::placeholder
+        @include font(400, 15px, 22.4px, '', 0.3px)
         color: #BDBDBD
-        font-weight: 400
-        font-size: 15px
-        line-height: 22.4px
-        letter-spacing: 0.3px
     &:focus
         background-color: white
 
 form > button
+    @include font(400, 15px, 22.4px, '', 0.3px)
     width: 129px
     height: 42px
     border: 1px solid black
     color: black
     border-radius: 5px
     background: #F1F3F2
-    font-weight: 400
-    font-size: 15px
-    line-height: 22.4px
-    letter-spacing: 0.3px
     

@@ -1,5 +1,22 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
+@mixin flex($just: flex-start, $align: stretch)
+    display: flex
+    justify-content: $just
+    align-items: $align
+
+@mixin font($w, $s, $h, $a: left, $ls: 0)
+    font-weight: $w
+    font-size: $s
+    line-height: $h
+    text-align: $a
+    letter-spacing: $ls
+
+@mixin img($s, $p: 0 0)
+    background-image: url($s)
+    background-repeat: no-repeat
+    background-position: $p
+
 body
     margin: 0
     padding: 0
@@ -16,21 +33,19 @@ button
         cursor: pointer
 
 header
+    @include flex('', center)
     background-color: black
-    display: flex
     color: white
     min-height: 80px
     padding: 0 13.75%
-    align-items: center
 
 ul, p, h1, h2, h3, h4, h5, h6, nav
     margin: 0
     
 
 .menu
-    display: flex
+    @include flex(space-between)
     flex-basis: 472px
-    justify-content: space-between
     padding: 0
     margin-left: 64px
     list-style: none
@@ -39,9 +54,7 @@ ul, p, h1, h2, h3, h4, h5, h6, nav
     color: orange
 
 li, .by
-    font-weight: 500
-    font-size: 16px
-    line-height: 22.4px
+    @include font(500, 16px, 22.4px)
 
 a
     &:link, &:active, &:visited
@@ -52,24 +65,16 @@ a
         cursor: pointer
 
 .logo
+    @include flex(center, center)
+    @include img('../../assets/icons/bamboo.svg', 8.5px 22px)
     flex-basis: 80px
     height: 49px
     border: 1px solid white
     align-self: center
-    display: flex
-    justify-content: center
-    align-items: center
     border-radius: 2px
-    background-image: url('../../assets/icons/bamboo.svg')
-    background-repeat: no-repeat
-    background-position-x: 8.5px
-    background-position-y: 22px
 
 .petstory
-    font-weight: 400
-    font-size: 19.01px
-    line-height: 22.82px
-    text-align: center
+    @include font(400, 19.01px, 22.82px, center)
 
 .by
     text-align: right
@@ -85,9 +90,8 @@ div > p
 ////////////////////////////////////////////section///////////////////////////////////////////
 
 .panda
-    background-image: url('../../assets/images/Giant Panda.png')
+    @include img('../../assets/images/Giant Panda.png', 0 -198px)
     height: 386px
-    background-position-y: -198px
 
 section
     background: linear-gradient(315.75deg, rgba(254, 210, 144, 0.7) 30.06%, #FEBDAB 100.95%, rgba(254, 210, 144, 0.7) 106.36%), linear-gradient(315.75deg, rgba(254, 189, 171, 0.74) 30.06%, rgba(243, 169, 248, 0.66) 50.74%, #E0D8F0 80.49%, #EAF7FE 127.9%, #EAF7FE 149.54%), linear-gradient(315.75deg, rgba(254, 189, 171, 0.74) 30.06%, rgba(243, 169, 248, 0.66) 50.74%, #E0D8F0 80.49%, #EAF7FE 127.9%, #EAF7FE 149.54%)
@@ -95,25 +99,19 @@ section
     padding-top: 40px
 
 h2
-    font-weight: 400
-    font-size: 36px
-    line-height: 46.8px
+    @include font(400, 36px, 46.8px, center)
     color: white
-    text-align: center
 
 section > h2
     margin-bottom: 10px
 
 section > .p2
     width: 1160px
-    margin: 0 auto
+    margin: 0 auto 45px
     letter-spacing: 0.08px
-    margin-bottom: 45px
 
 .p2
-    font-weight: 400
-    font-size: 16px
-    line-height: 22.4px
+    @include font(400, 16px, 22.4px)
     color: white
 
 .info
@@ -134,55 +132,39 @@ section > .p2
     margin: 0 92px
 
 h1
+    @include font(400, 48px, 57.6px, center)
     color: #FE9013
-    text-align: center
     margin-right: 12px
-    font-weight: 400
-    font-size: 48px
-    line-height: 57.6px
 
 .p1
-    font-weight: 400
-    font-size: 24px
-    line-height: 28.8px
+    @include font(400, 24px, 28.8px)
     margin-top: 20px
 
 .items
-    margin-top: 60px
+    margin: 60px 0 48px 215px
     width: 532px
     height: 246px
-    margin-left: 215px
     display: flex
-    margin-bottom: 48px
 
 .str1
-    font-weight: 500
-    font-size: 72px
-    line-height: 57.6px
+    @include font(500, 72px, 57.6px)
     margin-bottom: 10px
 
 .str2
-    font-weight: 400
-    font-size: 16px
-    line-height: 22.4px
+    @include font(400, 16px, 22.4px)
     margin-bottom: 50px
 
 .itm1
-    display: flex
+    @include flex(flex-end, center)
     flex-direction: column
-    align-items: center
-    justify-content: flex-end
 
 .itm2
-    background-image: url('../../assets/icons/cross.svg')
+    @include img('../../assets/icons/cross.svg', 10px 130px)
     width: 24px
-    background-repeat: no-repeat
-    background-position: 10px 130px
 
 .itm3
-    background-image: url('../../assets/images/animals-widget.png')
+    @include img('../../assets/images/animals-widget.png')
     width: 284px
-    background-repeat: no-repeat
     margin-left: 64px
 
 .content > p
@@ -190,15 +172,13 @@ h1
     text-align: left
 
 .count
+    @include flex(space-between, center)
     margin-top: 17px
     background-color: #72828E
     border: 12.5px solid #404950
     border-radius: 2px
     height: 2px
-    display: flex
     padding-right: 15px
-    justify-content: space-between
-    align-items: center
 
 .count > div
     width: 40px
@@ -228,9 +208,7 @@ h1
     display: flex
 
 .content > ul > li
-    font-weight: 500
-    font-size: 26px
-    line-height: 36.4px
+    @include font(500, 26px, 36.4px)
 
 .pr1
     margin-right: 56px
@@ -276,11 +254,8 @@ h1
         -webkit-appearance: none
         margin: 0
     &::placeholder
+        @include font(400, 15px, 22.4px, '', 0.3px)
         color: #929699
-        font-weight: 400
-        font-size: 15px
-        line-height: 22.4px
-        letter-spacing: 0.3px
     &:focus
         background: none
         background-image: url('../../assets/icons/dollar.svg')
@@ -317,24 +292,18 @@ h1
     background-color: #FE9013
 
 .form2 > label
+    @include font(400, 16px, 22.4px)
     margin-right: 45px
-    font-weight: 400
-    font-size: 16px
-    line-height: 22.4px
 
 .btn1
+    @include font(500, 15px, 22.4px, '', -0.3px)
     background: linear-gradient(113.96deg, #F9804B 1.49%, #FE9013 101.44%)
     border-radius: 25px
     width: 298px
     height: 54px
     border: none
-    margin: 0 -282px 30px
-    font-weight: 500
-    font-size: 15px
-    line-height: 22.4px
-    margin-top: 52px
+    margin: 52px -282px 30px
     color: white
-    letter-spacing: -0.3px
 
 .content > .p2
     // text-align: center
@@ -345,13 +314,10 @@ h1
 /////////////////////////////////////////////footer//////////////////////////////////////////
 
 footer
+    @include flex(space-between, flex-end)
     height: 393px
     background-color: black
-    padding: 0 220px
-    display: flex
-    align-items: flex-end
-    padding-bottom: 50px
-    justify-content: space-between
+    padding: 0 220px 50px
 
 .left
     flex-basis: 298px
@@ -362,29 +328,22 @@ footer
     width: 80px
 
 .btn5
-    font-weight: 500
-    font-size: 15px
-    line-height: 22.4px
+    @include font(500, 15px, 22.4px, '', -0.3px)
     color: white
     background: linear-gradient(113.96deg, #F9804B 1.49%, #FE9013 101.44%)
     border-radius: 5px
     border: none
     width: 298px
     height: 54px
-    margin-top: 70px
-    margin-bottom: 35px 
-    letter-spacing: -0.3px
+    margin: 70px 0 35px
 
 .social > li
+    @include flex('', flex-end)
+    @include font(400, 16px, 22.4px)
     color: white
     list-style: none
-    font-weight: 400
-    font-size: 16px
-    line-height: 22.4px
     height: 26px
     padding-left: 38px
-    display: flex
-    align-items: flex-end
     margin-top: 10px
     background-repeat: no-repeat
     &:hover
@@ -415,9 +374,8 @@ ul > a
         background-image: url('../../assets/images/yb-hover.png')
 
 .center
-    display: flex
+    @include flex(space-between)
     flex-basis: 362px
-    justify-content: space-between
     padding: 0
     list-style: none
 
@@ -425,19 +383,14 @@ ul > a
     color: white
 
 .right > h5
+    @include font(400, 24px, 28.8px)
     color: white
-    font-weight: 400
-    font-size: 24px
-    line-height: 28.8px
     margin-bottom: 14px
 
 .right > p
+    @include font(100, 16px, 20.8px)
     color: white
-    font-weight: 100
-    font-size: 16px
-    line-height: 20.8px
-    margin-top: 10px
-    margin-left: 140px
+    margin: 10px 0 0 140px
 
 .right > form
     height: 42px
@@ -445,6 +398,7 @@ ul > a
     margin-bottom: 216px
 
 input
+    @include font(400, 15px, 22.4px, '', 0.3px)
     width: 214px
     height: 38px
     background-color: black
@@ -452,27 +406,17 @@ input
     padding-left: 10px
     margin-right: 8px
     color: white
-    font-weight: 400
-    font-size: 15px
-    line-height: 22.4px
-    letter-spacing: 0.3px
     &::placeholder
+        @include font(400, 15px, 22.4px, '', 0.3px)
         color: #BDBDBD
-        font-weight: 400
-        font-size: 15px
-        line-height: 22.4px
-        letter-spacing: 0.3px
     &:focus
         background-color: white
 
 form > button
+    @include font(400, 15px, 22.4px, '', 0.3px)
     width: 129px
     height: 42px
     border: 1px solid black
     color: black
     border-radius: 5px
     background: #F1F3F2
-    font-weight: 400
-    font-size: 15px
-    line-height: 22.4px
-    letter-spacing: 0.3px

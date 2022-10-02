@@ -18,7 +18,6 @@ document.querySelector('body').addEventListener("keyup", function (event) {
 document.querySelectorAll('.count > div').forEach(e => {
     e.addEventListener('mouseover', function () {
         e.querySelector('.point').style.backgroundColor = 'orange'
-        console.log('123')
     }) 
 })
 
