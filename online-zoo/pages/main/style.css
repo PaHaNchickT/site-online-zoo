@@ -990,4 +990,10 @@ form > button {
   border-radius: 5px;
   background: #F1F3F2;
 }
+
+@media screen and (max-width: 1000px) {
+  body {
+    background-color: red;
+  }
+}
 /*# sourceMappingURL=style.css.map */

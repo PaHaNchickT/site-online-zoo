@@ -17,6 +17,10 @@
     background-repeat: no-repeat
     background-position: $p
 
+$desktop: 1000px
+$tablet: 640px
+$mobile: 320px
+
 body
     margin: 0
     padding: 0
@@ -609,3 +613,8 @@ form > button
     border-radius: 5px
     background: #F1F3F2
     
+//////////////////////////////////////////SMALL DESKTOP//////////////////////////////////////////////
+
+@media screen and (max-width: $desktop)
+    body
+        background-color: red
