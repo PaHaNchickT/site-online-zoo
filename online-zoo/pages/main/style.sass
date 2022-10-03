@@ -80,6 +80,7 @@ a
 .by
     text-align: right
     flex-basis: 105px
+    flex-shrink: 0
 
 .empty
     flex-basis: 445px
@@ -94,14 +95,16 @@ div > p
     @include img('../../assets/images/Giant Panda.png', 0 -80px)
     min-height: 700px
 
+.cont
+    padding-top: 86px
+
 h1
     @include font(700, 106.5px, 79.87px, center)
-    position: relative
+    position: absolute
+    left: calc((100vw - 400.25px)*0.741)
     color: white
     z-index: 6
-    width: 500.31px
-    top: 86px
-    left: 55%
+    margin-right: 85.75px
 
 h1 > span
     color: #FFEE2E
@@ -110,7 +113,7 @@ h1 > span
     position: absolute
     width: 465px
     height: 465px
-    left: calc(50% - 465px/2 + 239.5px)
+    left: calc((100vw - 465px)*0.711)
     top: 92px
     background: linear-gradient(113.96deg, #F9804B 1.49%, #FE9013 101.44%)
     border-radius: 50%
@@ -125,15 +128,19 @@ h1 > span
     color: white
     border: none
     position: absolute
-    left: calc(50% - 298px/2 + 332px)
+    left: calc((100vw - 298px)*0.756)
     top: 626px
 
 //////////////////////////////////////////////////////////section2/////////////////////////////////////////////////////
 
 .section2
+    @include img('../../assets/images/section2-bg.png')
     background-color: white
     min-height: 1689px
-    margin-top: 140px
+    padding-top: 140px
+
+.flowers
+    position: relative
 
 .strel
     @include img('../../assets/images/strelitzia 1.png')
@@ -141,7 +148,7 @@ h1 > span
     width: 368px
     height: 275px
     right: 0px
-    top: 2334px
+    top: -275px
 
 .palm
     @include img('../../assets/images/palm_foto.png')
@@ -149,30 +156,24 @@ h1 > span
     width: 400px
     height: 460px
     left: 0px
-    top: 2149px
-
-.flow
-    @include img('../../assets/images/flower_foto1.png')
-    position: absolute
-    width: 204px
-    height: 605px
-    right: 0
-    top: 792px
+    top: -460px
 
 .oldman
-    height: 403px
-    margin: 0 13.6875% 180px 13.6875%
+    @include flex(space-around)
+    flex-wrap: wrap
+    max-width: 1245px
+    min-height: 403px
+    margin: 0 auto 158px
 
 .oldman-pic
     @include img('../../assets/images/bamboo-cap.png')
     width: 609px
     height: 403px
-    margin: 0
-    float: left
+    margin: 0 40px
 
 .oldman-article
     width: 465px
-    float: right
+    margin: 0 40px
 
 h2
     @include font(400, 46px, 57.6px, '', 0.9px)
@@ -192,10 +193,10 @@ h5
     @include font(400, 16px, 22.4px)
 
 .pag
-    @include flex(space-between)
-    margin: 0 13.6875% 80px 13.6875%
-    width: 1158px
-    height: 872px
+    @include flex(center)
+    margin: 0 12.7% 80px
+    max-width: 1200px
+    min-height: 872px
     flex-wrap: wrap
     align-content: space-between
     
@@ -210,6 +211,7 @@ h5
     overflow: hidden
     background-size: 100.5%
     transition: 0.5s
+    margin: 20px 15px 0
 
 .title
     @include flex(center)
@@ -266,8 +268,8 @@ h6
     position: absolute
     width: 62px
     height: 62px
-    left: 138px
-    top: 403px
+    left: calc((100vw - 62px)*0.089)
+    top: 423px
     background: linear-gradient(113.96deg, #F9804B 1.49%, #FE9013 101.44%)
 
 .btnL > div, .btnR > div
@@ -284,7 +286,7 @@ h6
     width: 62px
     height: 62px
     right: 140px
-    top: 403px
+    top: 423px
     background: linear-gradient(113.96deg, #F9804B 1.49%, #FE9013 101.44%)
 
 .btn2
@@ -295,7 +297,7 @@ h6
     height: 54px
     background: #FE9013
     border-radius: 25px
-    margin-left: 40.6875%
+    margin: 0 calc((100vw - 298px)/2) 100px
 
 ///////////////////////////////////////////////section 3////////////////////////////////////////////////
 
@@ -309,9 +311,9 @@ h6
     background: rgba(253, 253, 255, 0.52)
     backdrop-filter: blur(2px)
     border-radius: 20px
-    width: 1160px
-    height: 835px
-    margin-left: 13.75%
+    max-width: 1160px
+    min-height: 835px
+    margin: 0 auto
     display: flex
     flex-direction: column
     
@@ -321,16 +323,18 @@ h3
     margin-top: 41px
 
 .wrapper > h5
-    margin: 30px 0 40px 99px
+    margin: 30px 99px 40px
 
 .p3
     @include font(500, 16px, 20.8px)
 
 .wrapper > .p3
-    margin-left: 99px
+    max-width: 1002px
+    margin: 0 59px 0 99px
 
 .wrapper > .p1
-    margin: 10px 0 56px 99px
+    max-width: 863px
+    margin: 10px 59px 56px 99px
 
 .p1 > span
     border-bottom: 2px solid #FE9013
@@ -354,7 +358,7 @@ h4
     @include flex(space-between)
     height: 244px
     width: 764px
-    margin-left: 198px
+    align-self: center
 
 .items > div
     width: 168px
@@ -392,31 +396,23 @@ h4
 
 .btn3
     @include font(500, 14px, 22.4px, '', 0.55px)
-    position: relative
+    align-self: center
+    margin: 60px 0 50px
     width: 298px
     height: 54px
     border: none
     background: linear-gradient(113.96deg, #F9804B 1.49%, #FE9013 101.44%)
     border-radius: 25px
     color: white
-    top: -112px
-    left: 40.6875%
 
 /////////////////////////////////////////////////section 4//////////////////////////////////////////////////
 
 .section4
-    @include flex('', center)
-    height: 919px
+    @include img('../../assets/images/section4-bg.png', 100% 92%)
+    min-height: 780px
     background-color: white
     flex-direction: column
-
-.leav
-    @include img('../../assets/images/leav_foto.png')
-    position: absolute
-    width: 160px
-    height: 237px
-    right: 0
-    top: 4295px
+    padding: 0 220px
 
 .section4 > h4
     margin-top: 140px
@@ -425,9 +421,9 @@ h4
 
 .slider-itms
     @include flex(space-between)
-    width: 1160px
-    height: 391px
-    margin-bottom: 21px
+    flex-wrap: wrap
+    max-width: 1160px
+    min-height: 391px
 
 .slider-itms > div
     background: #F1F3F2
@@ -439,6 +435,7 @@ h4
     background-position: top left,top center,top right,center right, bottom right,bottom center,bottom left,center left
     background-repeat: no-repeat
     padding: 15px
+    margin-bottom: 21px
 
 .p4
     @include font(400, 16px, 19.2px)
@@ -474,6 +471,7 @@ h4
     height: 8px
     background: linear-gradient(to top,#fdc1b0 , #e5ccf2)
     border-radius: 5px
+    margin: 0 auto
 
 .slider-btn > div
     width: 598.5px
@@ -500,23 +498,24 @@ h4
     background: linear-gradient(113.96deg, #F9804B 1.49%, #FE9013 101.44%)
     border-radius: 5px
     color: white
-    margin: 31px 0 0 220px
+    margin: 31px 0 140px
     align-self: flex-start
     border: none
 
 /////////////////////////////////////////////footer//////////////////////////////////////////
 
 footer
-    @include flex(space-between, flex-end)
-    height: 393px
+    @include flex(flex-start, flex-end)
+    flex-wrap: wrap
+    min-height: 393px
     background-color: black
-    padding: 0 220px
+    padding: 0 calc((100vw - 1160px)/2) 0 calc((100vw - 1160px)/2 - 43px)
     padding-bottom: 50px
 
 
 .left
     flex-basis: 298px
-    margin-right: 66px
+    margin: 39px 0 0 43px
 
 .left > div
     color: white
@@ -545,8 +544,6 @@ footer
         cursor: pointer
         color: green
     
-
-
 ul
     padding: 0
 
@@ -571,9 +568,14 @@ ul > a
 
 .center
     @include flex(space-between)
-    flex-basis: 362px
+    flex-basis: 360px
     padding: 0
     list-style: none
+    margin-left: 102px
+
+.right
+    margin-top: 40px
+    margin-left: 31px
 
 .right > h5
     color: white
@@ -617,4 +619,4 @@ form > button
 
 @media screen and (max-width: $desktop)
     body
-        background-color: red
+        // background-color: red
