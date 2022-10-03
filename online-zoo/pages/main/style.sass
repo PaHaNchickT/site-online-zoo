@@ -149,14 +149,16 @@ h1 > span
     height: 275px
     right: 0px
     top: -275px
+    z-index: 1
 
 .palm
-    @include img('../../assets/images/palm_foto.png')
+    @include img('../../assets/images/palm_foto.png', -588px 0)
     position: absolute
     width: 400px
     height: 460px
     left: 0px
     top: -460px
+    z-index: 1
 
 .oldman
     @include flex(space-around)
@@ -206,12 +208,14 @@ h5
     width: 362px
     height: 422px
     border-radius: 5px
+    background-color: white
     border: 2px solid orange
     background-repeat: no-repeat
     overflow: hidden
     background-size: 100.5%
     transition: 0.5s
     margin: 20px 15px 0
+    z-index: 6
 
 .title
     @include flex(center)
@@ -224,6 +228,7 @@ h5
     position: relative
     top: 50px
     transition: 0.5s
+    z-index: 6
 
 h6
     @include font(500, 16px, 22.4px)
@@ -285,7 +290,7 @@ h6
     position: absolute
     width: 62px
     height: 62px
-    right: 140px
+    right: calc((100vw - 62px)*0.09)
     top: 423px
     background: linear-gradient(113.96deg, #F9804B 1.49%, #FE9013 101.44%)
 
@@ -618,5 +623,203 @@ form > button
 //////////////////////////////////////////SMALL DESKTOP//////////////////////////////////////////////
 
 @media screen and (max-width: $desktop)
-    body
-        // background-color: red
+    header
+        padding: 0 calc((100vw - 940px)/2)  
+        position: relative  
+        z-index: 6
+
+    .logo
+        flex-basis: 87px
+
+    ////////////////////////////////////////////section1///////////////////////////////////////////
+
+    .section1
+        min-height: 504px
+        background-size: 120%
+        background-position-x: -100px
+
+    .ellipse
+        width: 367px
+        height: 367px
+        left: calc((100vw - 367px)*0.72)
+        top: 70px
+
+    .cont
+        padding-top: 42.8px
+
+    h1
+        font-size: 85px
+        line-height: 63.75px
+        left: calc((100vw - 400.25px)*0.87)
+
+    .watch
+        left: calc((100vw - 298px)*0.805)
+        top: 482px
+
+    ////////////////////////////////////////////section2///////////////////////////////////////////
+
+    .section2
+        min-height: 1644px
+        padding-top: 100px
+        padding: 100px 30px 0
+    
+    .oldman
+        max-width: 940px
+        min-height: 427px
+        margin-bottom: 142px
+        justify-content: space-between
+
+    .oldman-pic
+        width: 455px
+        height: 408px
+        margin: 9px 0 0
+        background-size: 135.2%
+        background-position-x: -80px
+
+    .oldman-article
+        width: 454px
+        margin: 0
+
+    .pag
+        justify-content: space-between
+        margin: 0
+        max-width: 941px
+        min-height: 801px
+
+    .pag > div
+        width: 290px
+        height: 350px
+        margin: 0 0 92px
+
+    .title
+        @include flex(center)
+        background-color: white
+        width: 100%
+        height: 60px
+        flex-direction: column
+        border-bottom-left-radius: 5px
+        border-bottom-right-radius: 5px
+        position: relative
+        top: 50px
+        transition: 0.5s
+
+    .btnL
+        left: calc((100vw - 62px)*0.345)
+        top: 368px
+
+    .btnR
+        right: calc((100vw - 62px)*0.344)
+        top: 368px
+
+    .btn2
+        margin: -12px calc((100vw - 298px)/2 - 30px) 100px
+
+    .strel
+        right: -30px
+        top: -235px
+        background-size: 65.5%
+        background-position: 100% 100%
+
+    .palm
+        left: -30px
+        top: -420px
+        background-size: 97%
+        background-position: -194px 258px
+
+    .banana
+        background-position: 245px 10px
+
+    .fish
+        background-position: 234px 10px
+
+    ////////////////////////////////////////////section3///////////////////////////////////////////
+
+    .section3
+        min-height: 846px
+        padding: 30px 30px 0
+
+    h3
+        margin-top: 30px
+
+    .wrapper
+        min-height: 796px
+
+    .wrapper > h5
+        margin: 20px 48px 20px 49px
+
+    .wrapper > .p3
+        // max-width: 1002px
+        margin: 0 78px 0 49px
+
+    .wrapper > .p1
+        // max-width: 863px
+        margin: 10px 68px 36px 49px
+
+    .itm4
+        background-position: 50% 28.8%
+
+    .btn3
+        margin: 70px 0 50px
+
+    /////////////////////////////////////////////////section 4//////////////////////////////////////////////////
+
+    .section4
+        min-height: 742px
+        padding: 0 30px
+        background-position: 99.9% 230%
+        background-size: 129%
+
+    .section4 > h4
+        margin-top: 100px
+        margin-bottom: 30px
+
+    .user-del
+        display: none
+    
+    .slider-itms > div
+        width: 263px
+        height: 361px
+        // padding: 15px
+        margin-bottom: 20px
+
+    .slider-itms > div > .p5
+        width: 255px
+
+    .slider-btn
+        width: 390px
+
+    .slider-btn > div
+        width: 390px
+
+    .slider-btn > div > div
+        width: 75px
+
+    .btn4
+        margin: 52px 0 140px
+
+    /////////////////////////////////////////////footer//////////////////////////////////////////
+
+    footer
+        min-height: 380px
+        padding-bottom: 0
+        position: relative
+        top: 0
+
+    .left
+        margin-bottom: 50px
+
+    .center
+        flex-basis: 332px
+        margin: 0 0 50px -7px
+
+    .right
+        margin: 0
+        position: absolute
+        top: 40px
+        left: 583px
+
+    input
+        margin-right: 6px
+
+    .right > p
+        margin: 10px 0 0 170px
