@@ -167,9 +167,9 @@ h1 > span
     z-index: 1
 
 .oldman
-    @include flex(space-around)
+    @include flex(flex-start)
     flex-wrap: wrap
-    max-width: 1245px
+    max-width: 1262px
     min-height: 403px
     margin: 0 auto 158px
 
@@ -177,12 +177,16 @@ h1 > span
     @include img('../../assets/images/bamboo-cap.png')
     width: 609px
     height: 403px
-    margin: 0 40px
+    margin: 0 38px 0 50px
 
 .oldman-article
     max-width: 485px
     min-height: 116px
-    margin: 0 40px
+    margin: 0
+    margin-left: 50px
+
+.oldman-article > .p2
+    max-width: 465px
 
 h2
     @include font(400, 46px, 57.6px, '', 0.9px)
@@ -793,8 +797,9 @@ form > button
         background-position-x: -80px
 
     .oldman-article
-        // max-width: 457px
+        max-width: 454px
         margin: 0
+        margin-left: 10px
 
     .pag
         justify-content: space-between
@@ -921,8 +926,9 @@ form > button
 
     .user-del
         display: none
-    
+
     .slider-itms > div
+        flex-basis: 263px
         max-width: 263px
         min-height: 361px
         margin-bottom: 20px
@@ -1071,12 +1077,15 @@ form > button
     .oldman
         min-height: 367px
         margin-bottom: 80px
+        margin-left: -10px
 
     .oldman-pic
         display: none
 
+    .oldman-article
+        max-width: 490px
+
     .oldman-article > h2
-        max-width: 454px
         margin-left: 5px
 
     .oldman-article > .p1
@@ -1253,6 +1262,7 @@ form > button
     
     .slider-itms > div
         max-width: 100%
+        flex-basis: 600px
         min-height: 95px
         margin-bottom: 14px
         overflow: hidden

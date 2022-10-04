@@ -224,14 +224,15 @@ h1 > span {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
   -webkit-box-align: stretch;
       -ms-flex-align: stretch;
           align-items: stretch;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  max-width: 1245px;
+  max-width: 1262px;
   min-height: 403px;
   margin: 0 auto 158px;
 }
@@ -242,13 +243,18 @@ h1 > span {
   background-position: 0 0;
   width: 609px;
   height: 403px;
-  margin: 0 40px;
+  margin: 0 38px 0 50px;
 }
 
 .oldman-article {
   max-width: 485px;
   min-height: 116px;
-  margin: 0 40px;
+  margin: 0;
+  margin-left: 50px;
+}
+
+.oldman-article > .p2 {
+  max-width: 465px;
 }
 
 h2 {
@@ -1191,7 +1197,9 @@ form > button {
     background-position-x: -80px;
   }
   .oldman-article {
+    max-width: 454px;
     margin: 0;
+    margin-left: 10px;
   }
   .pag {
     -webkit-box-pack: justify;
@@ -1332,6 +1340,8 @@ form > button {
     display: none;
   }
   .slider-itms > div {
+    -ms-flex-preferred-size: 263px;
+        flex-basis: 263px;
     max-width: 263px;
     min-height: 361px;
     margin-bottom: 20px;
@@ -1477,12 +1487,15 @@ form > button {
   .oldman {
     min-height: 367px;
     margin-bottom: 80px;
+    margin-left: -10px;
   }
   .oldman-pic {
     display: none;
   }
+  .oldman-article {
+    max-width: 490px;
+  }
   .oldman-article > h2 {
-    max-width: 454px;
     margin-left: 5px;
   }
   .oldman-article > .p1 {
@@ -1657,6 +1670,8 @@ form > button {
   }
   .slider-itms > div {
     max-width: 100%;
+    -ms-flex-preferred-size: 600px;
+        flex-basis: 600px;
     min-height: 95px;
     margin-bottom: 14px;
     overflow: hidden;
