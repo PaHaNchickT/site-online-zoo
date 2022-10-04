@@ -1422,6 +1422,9 @@ form > button {
         -ms-flex-pack: justify;
             justify-content: space-between;
     padding: 0 20px;
+    position: fixed;
+    width: 100%;
+    z-index: 10;
   }
   header > .logo {
     background-position: 4px 14px;
