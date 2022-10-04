@@ -299,7 +299,7 @@ h1 {
   cursor: pointer;
 }
 
-.check {
+.dp3 {
   background-image: url("../../assets/icons/roller_icon.svg");
 }
 
@@ -342,6 +342,10 @@ h1 {
 
 .pr2 {
   margin-right: 56px;
+}
+
+.dp3 {
+  background-image: url("../../assets/icons/roller_icon.svg");
 }
 
 .pr3 {
@@ -968,6 +972,13 @@ form > button {
   .content > .p-center {
     margin-left: 0;
   }
+  .dp6 {
+    background-image: url("../../assets/icons/roller_icon.svg");
+  }
+  .pr6 {
+    margin-right: 56px;
+    color: #FE9013;
+  }
   .right > h5, .right > form {
     display: none;
   }
@@ -1064,7 +1075,7 @@ form > button {
     line-height: 28.8px;
   }
   .wrapper {
-    padding-top: 20px;
+    padding-top: 21px;
     min-height: 572px;
   }
   .content > h1 {
@@ -1093,7 +1104,7 @@ form > button {
   .str2 {
     font-size: 9.02px;
     line-height: 12.63px;
-    margin-bottom: 26px;
+    margin-bottom: 27.5px;
   }
   .itm1 {
     -ms-flex-preferred-size: 89.66px;
@@ -1113,21 +1124,28 @@ form > button {
   }
   .content > .p2 {
     margin: 0;
-    margin-top: 5px;
+    margin-top: 3px;
   }
   .count {
-    height: 0.5px;
-    border: 7px solid #404950;
+    margin-top: 8.5px;
+    height: 1px;
+    border: 6.5px solid #404950;
   }
   .point {
     width: 5px;
     height: 5px;
+    left: 7.5px;
+    top: 7.5px;
   }
   .count > div {
     position: relative;
-    left: -4.5px;
-    top: 2px;
-    margin-right: -30px;
+    left: 3px;
+    top: 0;
+    margin-right: -8px;
+    width: 20px;
+    height: 20px;
+    background-size: 20px;
+    background-repeat: no-repeat;
   }
   .price {
     margin-left: 7.5px;
@@ -1139,13 +1157,13 @@ form > button {
     line-height: 18.2px;
   }
   .pr4 {
-    margin-right: 36.5px;
+    margin-right: 35px;
   }
   .pr5 {
     margin-right: 36.5px;
   }
   .pr6 {
-    margin-right: 32px;
+    margin-right: 34px;
   }
   .pr7 {
     margin-right: 43px;
