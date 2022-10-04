@@ -17,6 +17,31 @@
     background-repeat: no-repeat
     background-position: $p
 
+@mixin flex($just: flex-start, $align: stretch)
+    display: flex
+    justify-content: $just
+    align-items: $align
+
+@mixin font($w, $s, $h, $a: left, $ls: 0)
+    font-weight: $w
+    font-size: $s
+    line-height: $h
+    text-align: $a
+    letter-spacing: $ls
+
+@mixin img($s, $p: 0 0)
+    background-image: url($s)
+    background-repeat: no-repeat
+    background-position: $p
+
+$desktop: 1000px
+$tablet: 640px
+$temp: 525px
+$mobile: 320px
+
+html
+    overflow-x: hidden
+
 body
     margin: 0
     padding: 0
@@ -79,6 +104,7 @@ a
 .by
     text-align: right
     flex-basis: 105px
+    flex-shrink: 0
 
 .empty
     flex-basis: 445px
@@ -106,7 +132,7 @@ section > h2
     margin-bottom: 10px
 
 section > .p2
-    width: 1160px
+    max-width: 1160px
     margin: 0 auto 45px
     letter-spacing: 0.08px
 
@@ -125,7 +151,7 @@ section > .p2
     backdrop-filter: blur(2px)
     border-radius: 20px
     height: 924px
-    width: 1160px
+    max-width: 1160px
     padding-top: 40px
 
 .content
@@ -142,7 +168,7 @@ h1
 
 .items
     margin: 60px 0 48px 215px
-    width: 532px
+    max-width: 532px
     height: 246px
     display: flex
 
@@ -173,6 +199,7 @@ h1
 
 .count
     @include flex(space-between, center)
+    max-width: 976px
     margin-top: 17px
     background-color: #72828E
     border: 12.5px solid #404950
@@ -199,13 +226,14 @@ h1
     left: 15px
 
 .price
-    width: 951px
+    max-width: 960px
 
 .content > ul
     padding: 0
     list-style: none
     margin-top: 12px
     display: flex
+    flex-wrap: wrap
 
 .content > ul > li
     @include font(500, 26px, 36.4px)
@@ -263,11 +291,14 @@ h1
         background-position: 248px 17px
 
 .form2
-    float: left
-    margin-left: 381px
+    // float: left
+    margin: 36px auto 0
+    padding-left: 153px
 
 .form2 > input
     position: absolute
+    width: 0
+    height: 0
     z-index: -1
     opacity: 0
 
@@ -302,7 +333,7 @@ h1
     width: 298px
     height: 54px
     border: none
-    margin: 52px -282px 30px
+    margin: 10px calc((100vw - 298px)/2 - 312px) 30px
     color: white
 
 .content > .p2
@@ -314,14 +345,18 @@ h1
 /////////////////////////////////////////////footer//////////////////////////////////////////
 
 footer
-    @include flex(space-between, flex-end)
-    height: 393px
+    @include flex(flex-start, flex-end)
+    position: relative
+    flex-wrap: wrap
+    min-height: 393px
     background-color: black
-    padding: 0 220px 50px
+    padding: 0 calc((100vw - 1160px)/2) 0 calc((100vw - 1160px)/2 - 43px)
+    padding-bottom: 50px
+    z-index: 5
 
 .left
     flex-basis: 298px
-    margin-right: 66px
+    margin: 39px 0 0 43px
 
 .left > div
     color: white
@@ -338,7 +373,6 @@ footer
     margin: 70px 0 35px
 
 .social > li
-    @include flex('', flex-end)
     @include font(400, 16px, 22.4px)
     color: white
     list-style: none
@@ -346,11 +380,11 @@ footer
     padding-left: 38px
     margin-top: 10px
     background-repeat: no-repeat
+    @include flex('', flex-end)
     &:hover
         cursor: pointer
         color: green
-
-
+    
 ul
     padding: 0
 
@@ -360,27 +394,40 @@ ul > a
     background-image: url('../../assets/images/fb.png')
     &:hover
         background-image: url('../../assets/images/fb-hover.png')
+    &::after
+        content: 'Facebook'
+
 .twit
     background-image: url('../../assets/images/tw.png')
     &:hover
         background-image: url('../../assets/images/tw-hover.png')
+    &::after
+        content: 'Twitter'
+
 .inst
     background-image: url('../../assets/images/in.png')
     &:hover
         background-image: url('../../assets/images/in-hover.png')
+    &::after
+        content: 'Instagram'
+
 .yotu
     background-image: url('../../assets/images/yb.png')
     &:hover
         background-image: url('../../assets/images/yb-hover.png')
+    &::after
+        content: 'YouTube'
 
 .center
     @include flex(space-between)
-    flex-basis: 362px
+    flex-basis: 360px
     padding: 0
     list-style: none
+    margin-left: 102px
 
-.center > .about
-    color: white
+.right
+    margin-top: 40px
+    margin-left: 31px
 
 .right > h5
     @include font(400, 24px, 28.8px)
@@ -392,7 +439,7 @@ ul > a
     color: white
     margin: 10px 0 0 140px
 
-.right > form
+form
     height: 42px
     width: 369px
     margin-bottom: 216px
@@ -420,3 +467,201 @@ form > button
     color: black
     border-radius: 5px
     background: #F1F3F2
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////    
+//////////////////////////////////////////SMALL DESKTOP//////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////////////
+
+@media screen and (max-width: $desktop)
+    header 
+        padding: 0
+        position: relative  
+        z-index: 6
+
+    .logo
+        flex-basis: 87px
+        margin-left: 30px 
+
+    .by
+        margin-right: 30px
+        margin-left: 10px
+
+    /////////////////////////////////////////////footer//////////////////////////////////////////
+
+    footer
+        min-height: 444px
+        padding-bottom: 0
+        top: 0
+
+    .left
+        margin: 30px 0 60px
+        position: relative
+        left: 42px
+        top: 9px
+
+    .left > .logo
+        margin-left: 0
+
+    .center
+        flex-basis: 332px
+        margin: 0 280px 52px 35px
+
+    .right
+        margin: 0
+        position: absolute
+        top: 40px
+        left: calc((100vw - 397.39px)*0.971)
+
+    input
+        margin-right: 4px
+
+    .right > p
+        margin: 10px 0 0 170px
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////    
+//////////////////////////////////////////////TABLET/////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////////////
+
+@media screen and (max-width: $tablet)
+
+    header
+        min-height: 34px
+        padding: 0
+        justify-content: space-between
+        padding: 0 20px
+
+    header > .logo
+        background-position: 4px 14px
+        background-size: 5px
+        height: 29.03px
+        border: none
+        flex-basis: 46.93px
+        margin-left: 0
+
+
+    header > .logo > .petstory
+        @include font(400, 12.29px, 14.75px, center)
+
+    .by, .menu-off, .empty
+        display: none
+
+    .burger
+        @include img('../../assets/icons/burger_menu.svg')
+        background-repeat: repeat
+        display: block
+        width: 18px
+        height: 10px
+
+    /////////////////////////////////////////////////footer//////////////////////////////////////////////////
+
+    .right > h5, .right > form
+        display: none
+
+    .face, .twit, .inst, .yotu
+        &::after
+            content: ''
+
+    footer
+        min-height: 282px
+        padding: 0 20px
+        justify-content: space-between
+        align-items: flex-start
+        align-content: flex-start
+
+    .left
+        margin: 0
+        margin-top: 12px
+        left: 0
+        top: 0
+
+    .btn5
+        margin-top: 33px
+
+    .social
+        position: absolute
+        top: 0
+        left: calc((100vw - 26px)*0.935)
+        height: 175px
+        display: flex
+        flex-direction: column
+        justify-content: space-between
+        margin-top: -11px
+
+    .social > li
+        width: 26px
+        padding: 0
+
+    .center
+        flex-basis: 298px
+        margin: 62px 280px 0px 0px
+
+    .right
+        top: 208px
+        left: calc((100vw - 397.39px)*0.915)
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////    
+////////////////////////////////////////////////TEMP/////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////////////
+
+@media screen and (max-width: $temp)
+    .watch
+        margin-top: 20px
+
+    .social
+        position: static
+
+    .center
+        margin: 0
+        margin-top: 20px
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////    
+//////////////////////////////////////////////MOBILE/////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////////////
+
+@media screen and (max-width: $mobile)
+
+    header
+        padding: 0 10px
+
+    ////////////////////////////////////////////////////footer//////////////////////////////////////////////////
+
+    footer
+        padding: 0
+
+    .left
+        position: relative
+        min-width: 320px
+        margin-top: 8px
+
+    .left > .logo
+        border: none
+        width: 128px
+        margin: 0 auto
+        background-position: 73px 10px
+
+    .btn5
+        margin: 72px 13px 0 9px
+
+    .social
+        position: absolute
+        width: 194px
+        margin: 0
+        top: 55px
+        left: calc((100vw - 194px)/2)
+        flex-direction: row
+
+    .center
+        position: static
+        flex-basis: 278px
+        margin: 110px auto 20px
+
+    .right
+        position: absolute
+        top: 214px
+        left: calc((100vw - 214px)*0.915)
+
+    .right > p
+        margin: 0
+        font-size: 15px
+        line-height: 18px
+        margin-bottom: 13px
