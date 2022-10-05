@@ -865,7 +865,7 @@ form > button {
             justify-content: space-between;
     padding: 0 20px;
     position: fixed;
-    width: 100%;
+    width: 600px;
     z-index: 10;
   }
   header > .logo {
@@ -1057,6 +1057,7 @@ form > button {
 @media screen and (max-width: 320px) {
   header {
     padding: 0 10px;
+    width: 300px;
   }
   .panda {
     background-position: -146px -92px;
