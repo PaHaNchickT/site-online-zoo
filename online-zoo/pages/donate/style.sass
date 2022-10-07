@@ -169,7 +169,7 @@ h1
 .items
     margin: 60px 0 48px 215px
     max-width: 532px
-    height: 246px
+    min-height: 246px
     display: flex
 
 .str1
@@ -654,7 +654,15 @@ form > button
         margin-left: 10px
 
     .items
-        margin: 50px 0 41px 27px
+        margin: 50px 0 41px calc((100vw - 284px)*0.075)
+        flex-wrap: wrap
+
+    .itm2
+        min-height: 150px
+
+    .itm3
+        min-height: 246px
+        margin-left: calc((100vw - 284px)*0.18)
 
     .count
         margin-left: 0
@@ -696,7 +704,7 @@ form > button
     .dp6
         background-image: url('../../assets/icons/roller_icon.svg')
     .pr6
-        margin-right: 56px
+        margin-right: 70px
         color: #FE9013
 
 
@@ -811,8 +819,14 @@ form > button
         margin: 0
         margin-top: 10.28px
         max-width: 300px
-        height: 138.72px
+        min-height: 138.72px
         justify-content: space-between
+
+    .itm2
+        min-height: 100px
+
+    .itm3
+        min-height: 100px
 
     .str1
         font-size: 40.6px
