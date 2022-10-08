@@ -50,43 +50,38 @@ const pagMain = document.querySelector('.pagMain')
 const pagAdd = document.querySelector('.pagAdd')
 
 /////////////////////////////////////////////////core////////////////////////////////////////////////
-// console.log(btnL)
-btnL.addEventListener('click', function (event) {
-    pagBox.childNodes.forEach((e, i) => {
-    })
-    console.log(pagBox.childNodes[1].getBoundingClientRect().left)
-    console.log(pagBox.childNodes[3].getBoundingClientRect().left)
-    if (pagBox.childNodes[1].getBoundingClientRect().left < pagBox.childNodes[3].getBoundingClientRect().left) {
-        pagBox.childNodes[1].style.left = '-1193.6px'
-        pagBox.childNodes[1].style.opacity = '0'
-        pagBox.childNodes[3].style.left = '0'
-        pagBox.childNodes[3].style.opacity = '1'
-        pagBox.childNodes[1].addEventListener('transitionend', function() {
-            pagBox.childNodes[1].style.left = '1193.6px'
-            pagBox.childNodes[3].style.left = '0'
-            console.log(pagBox.childNodes[1].getBoundingClientRect().left)
-            console.log(pagBox.childNodes[3].getBoundingClientRect().left)
-        })
+
+btnL.addEventListener('click', function () {
+    let divCenter = pagBox.childNodes[1]
+    let divAdd = pagBox.childNodes[3]
+
+    if (divCenter.getBoundingClientRect().left < divAdd.getBoundingClientRect().left) {
+        divCenter.style.left = '-1193.6px'
+        divCenter.style.opacity = '0'
+        divAdd.style.left = '0'
+        divAdd.style.opacity = '1'
+        setTimeout(() => {
+            divCenter.style.left = '1193.6px';
+            divAdd.style.left = '0'
+    }, 750)
     } else {
-        pagBox.childNodes[3].style.left = '-1193.6px'
-        pagBox.childNodes[3].style.opacity = '0'
-        pagBox.childNodes[1].style.left = '0'
-        pagBox.childNodes[1].style.opacity = '1'
-        pagBox.childNodes[3].addEventListener('transitionend', function() {
-            pagBox.childNodes[1].style.left = '0'
-            pagBox.childNodes[3].style.left = '1193.6px'
-            console.log(pagBox.childNodes[1].getBoundingClientRect().left)
-            console.log(pagBox.childNodes[3].getBoundingClientRect().left)
-        })
+        divAdd.style.left = '-1193.6px'
+        divAdd.style.opacity = '0'
+        divCenter.style.left = '0'
+        divCenter.style.opacity = '1'
+        setTimeout(() => {
+            divCenter.style.left = '0'
+            divAdd.style.left = '1193.6px'
+    }, 750)
     }
 })
 
-btnR.addEventListener('click', function (event) {
-    pagMain.style.left = '0'
-    pagAdd.style.left = '1193.6px'
-    pagBox.childNodes.forEach((e, i) => {
-        if (e.className) {
-            console.log(e.getBoundingClientRect().left)
-        }
-    })
-})
+// btnR.addEventListener('click', function (event) {
+//     pagMain.style.left = '0'
+//     pagAdd.style.left = '1193.6px'
+//     pagBox.childNodes.forEach((e, i) => {
+//         if (e.className) {
+//             console.log(e.getBoundingClientRect().left)
+//         }
+//     })
+// })
