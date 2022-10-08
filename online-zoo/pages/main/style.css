@@ -295,6 +295,14 @@ h5 {
   letter-spacing: 0;
 }
 
+.pagBox {
+  margin: 0 12.7% 80px;
+  max-width: 1200px;
+  min-height: 892px;
+  overflow: hidden;
+  position: relative;
+}
+
 .pag {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -305,13 +313,31 @@ h5 {
   -webkit-box-align: stretch;
       -ms-flex-align: stretch;
           align-items: stretch;
-  margin: 0 12.7% 80px;
-  max-width: 1200px;
-  min-height: 872px;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   -ms-flex-line-pack: justify;
       align-content: space-between;
+}
+
+.pagMain {
+  width: 1193.6px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  -webkit-transition: 1s;
+  transition: 1s;
+  opacity: 1;
+  background-color: black;
+}
+
+.pagAdd {
+  width: 1193.6px;
+  position: absolute;
+  top: 0;
+  left: 1193.6px;
+  -webkit-transition: 1s;
+  transition: 1s;
+  opacity: 0;
 }
 
 .pag > div {
@@ -1201,13 +1227,15 @@ form > button {
     margin: 0;
     margin-left: 10px;
   }
+  .pagBox {
+    margin: 0;
+    max-width: 941px;
+    min-height: 801px;
+  }
   .pag {
     -webkit-box-pack: justify;
         -ms-flex-pack: justify;
             justify-content: space-between;
-    margin: 0;
-    max-width: 941px;
-    min-height: 801px;
   }
   .pag > div {
     width: 290px;
@@ -1514,7 +1542,7 @@ form > button {
     max-width: 495px;
     line-height: 22px;
   }
-  .pag {
+  .pagBox {
     min-height: 756px;
   }
   .pag > div {

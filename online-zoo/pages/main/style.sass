@@ -205,14 +205,40 @@ h5
 .p2
     @include font(400, 16px, 22.4px)
 
-.pag
-    @include flex(center)
+.pagBox
     margin: 0 12.7% 80px
     max-width: 1200px
-    min-height: 872px
+    min-height: 892px
+    overflow: hidden
+    position: relative
+
+.pag
+    @include flex(center)
     flex-wrap: wrap
     align-content: space-between
+
+// .pagLeft
+//     position: absolute
+//     top: 0
+//     right: 1193.6px
+//     background-color: black
     
+.pagMain
+    width: 1193.6px
+    position: absolute
+    top: 0
+    left: 0
+    transition: 1s
+    opacity: 1
+    background-color: black
+
+.pagAdd
+    width: 1193.6px
+    position: absolute
+    top: 0
+    left: 1193.6px
+    transition: 1s
+    opacity: 0
 
 .pag > div
     @include flex('', flex-end)
@@ -801,11 +827,13 @@ form > button
         margin: 0
         margin-left: 10px
 
-    .pag
-        justify-content: space-between
+    .pagBox
         margin: 0
         max-width: 941px
         min-height: 801px
+
+    .pag
+        justify-content: space-between
 
     .pag > div
         width: 290px
@@ -1104,7 +1132,7 @@ form > button
         max-width: 495px
         line-height: 22px
 
-    .pag
+    .pagBox
         min-height: 756px
 
     .pag > div
