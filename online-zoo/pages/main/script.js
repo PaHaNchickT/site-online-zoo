@@ -48,13 +48,15 @@ const btnL = document.querySelector('.btnL')
 const btnR = document.querySelector('.btnR')
 const pagMain = document.querySelector('.pagMain')
 const pagAdd = document.querySelector('.pagAdd')
+const splitter = document.querySelector('.splitter')
 
 /////////////////////////////////////////////////core////////////////////////////////////////////////
 
-btnL.addEventListener('click', function () {
-    let divCenter = pagBox.childNodes[1]
-    let divAdd = pagBox.childNodes[3]
+let divCenter = pagBox.childNodes[1]
+let divAdd = pagBox.childNodes[3]
 
+btnL.addEventListener('click', function () {
+    splitter.style.display = 'block'
     if (divCenter.getBoundingClientRect().left < divAdd.getBoundingClientRect().left) {
         divCenter.style.left = '-1193.6px'
         divCenter.style.opacity = '0'
@@ -62,7 +64,6 @@ btnL.addEventListener('click', function () {
         divAdd.style.opacity = '1'
         setTimeout(() => {
             divCenter.style.left = '1193.6px';
-            divAdd.style.left = '0'
     }, 750)
     } else {
         divAdd.style.left = '-1193.6px'
@@ -70,18 +71,40 @@ btnL.addEventListener('click', function () {
         divCenter.style.left = '0'
         divCenter.style.opacity = '1'
         setTimeout(() => {
-            divCenter.style.left = '0'
             divAdd.style.left = '1193.6px'
     }, 750)
     }
+    divCenter.addEventListener('transitionend', function() {splitter.style.display = 'none'})
 })
 
-// btnR.addEventListener('click', function (event) {
-//     pagMain.style.left = '0'
-//     pagAdd.style.left = '1193.6px'
-//     pagBox.childNodes.forEach((e, i) => {
-//         if (e.className) {
-//             console.log(e.getBoundingClientRect().left)
-//         }
-//     })
-// })
+btnR.addEventListener('click', function () {
+    splitter.style.display = 'block'
+    if (divCenter.getBoundingClientRect().left < divAdd.getBoundingClientRect().left) {
+        divAdd.style.transition = '0s'
+        divAdd.style.left = '-1193.6px'
+        setTimeout(() => {
+            divAdd.style.transition = '1s'
+            divAdd.style.left = '0'
+    }, 1)
+        divCenter.style.left = '1193.6px'
+        divCenter.style.opacity = '0'
+        divAdd.style.opacity = '1'
+        setTimeout(() => {
+            divCenter.style.left = '1193.6px';
+    }, 750)
+    } else {
+        divCenter.style.transition = '0s'
+        divCenter.style.left = '-1193.6px'
+        setTimeout(() => {
+            divCenter.style.transition = '1s'
+            divCenter.style.left = '0'
+    }, 1)
+        divAdd.style.left = '1193.6px'
+        divAdd.style.opacity = '0'
+        divCenter.style.opacity = '1'
+        setTimeout(() => {
+            divAdd.style.left = '1193.6px'
+    }, 750)
+    }
+    divCenter.addEventListener('transitionend', function() {splitter.style.display = 'none'})
+})
