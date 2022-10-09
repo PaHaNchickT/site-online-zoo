@@ -1,6 +1,5 @@
 import animals from './animals.js';
-// import vars from './style.sass';
-// console.log(variables)
+import feedback from './feedback.js';
 
 const body = document.querySelector('body')
 const input = document.querySelector('input')
@@ -226,3 +225,44 @@ function pagFill(divType) {
     }
 
 }
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////feedback//////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////////////
+
+const fbBtn = document.querySelector('.fb-btn')
+const fbBase = document.querySelector('.slider-btn')
+const fbBg = document.querySelector('.slider-bg')
+let step
+// console.log(fbBtn)
+// console.log(feedback)
+console.log(fbBase)
+
+/////////////////////////////////////////////fg-btn-core/////////////////////////////////////////////
+
+fbBg.addEventListener('mousemove', function (event) {
+    step = (fbBase.offsetWidth - fbBtn.offsetWidth/2 +8)/8
+    if (event.which === 1 && (Math.round(event.clientX - fbBase.getBoundingClientRect().left - 57.59) >= 0) && (Math.round(event.clientX - fbBase.getBoundingClientRect().left + 57.59) <= 598.5)) {
+        if (Math.round(event.clientX - fbBase.getBoundingClientRect().left - 57.59) >= 0 && Math.round(event.clientX - fbBase.getBoundingClientRect().left - 57.59) < step) {
+            fbBtn.style.left = '2px'
+        } else if (Math.round(event.clientX - fbBase.getBoundingClientRect().left - 57.59) >= step && Math.round(event.clientX - fbBase.getBoundingClientRect().left - 57.59) < 2*step) {
+            fbBtn.style.left = `${step}px`
+        } else if (Math.round(event.clientX - fbBase.getBoundingClientRect().left - 57.59) >= 2*step && Math.round(event.clientX - fbBase.getBoundingClientRect().left - 57.59) < 3*step) {
+            fbBtn.style.left = `${2*step}px`
+        } else if (Math.round(event.clientX - fbBase.getBoundingClientRect().left - 57.59) >= 3*step && Math.round(event.clientX - fbBase.getBoundingClientRect().left - 57.59) < 4*step) {
+            fbBtn.style.left = `${3*step}px`
+        } else if (Math.round(event.clientX - fbBase.getBoundingClientRect().left - 57.59) >= 4*step && Math.round(event.clientX - fbBase.getBoundingClientRect().left - 57.59) < 5*step) {
+            fbBtn.style.left = `${4*step}px`
+        } else if (Math.round(event.clientX - fbBase.getBoundingClientRect().left - 57.59) >= 5*step && Math.round(event.clientX - fbBase.getBoundingClientRect().left - 57.59) < 6*step) {
+            fbBtn.style.left = `${5*step}px`
+        } else if (Math.round(event.clientX - fbBase.getBoundingClientRect().left - 57.59) >= 6*step && Math.round(event.clientX - fbBase.getBoundingClientRect().left - 57.59) < 7*step) {
+            fbBtn.style.left = `${6*step}px`
+        } else if (Math.round(event.clientX - fbBase.getBoundingClientRect().left - 57.59) >= 7*step && Math.round(event.clientX - fbBase.getBoundingClientRect().left - 57.59) < 8*step) {
+            fbBtn.style.left = `${7*step}px`
+        } else if (Math.round(event.clientX - fbBase.getBoundingClientRect().left - 57.59) >= 8*step) {
+            fbBtn.style.left = `${8*step}px`
+        }
+    }
+})
+
+/////////////////////////////////////////////fg-btn-filling/////////////////////////////////////////////

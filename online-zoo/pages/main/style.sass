@@ -450,6 +450,14 @@ h4
     text-align: center
     margin-bottom: 47px
 
+.slider-bg
+    width: 100%
+    height: 47.5px
+    margin-top: 0
+    display: flex
+    flex-direction: column
+    justify-content: center
+
 .slider-itms
     @include flex(space-between)
     flex-wrap: wrap
@@ -466,7 +474,7 @@ h4
     background-position: top left,top center,top right,center right, bottom right,bottom center,bottom left,center left
     background-repeat: no-repeat
     padding: 15px
-    margin-bottom: 21px
+    // margin-bottom: 21px
 
 .p4
     @include font(400, 16px, 19.2px)
@@ -501,36 +509,6 @@ h4
 .user4
     background-image: url('../../assets/images/user4.png')
 
-.user1 > .p4
-    &::after
-        content: "Michael John "
-.user1 > .p5
-    &::after
-        content: "Local Austria • Today"
-
-.user2 > .p4
-    &::after
-        content: "Oskar Samborsky "
-.user2 > .p5
-    &::after
-        content: "Local Austria • Yesterday"
-
-.user3 > .p4
-    &::after
-        content: "Fredericka Michelin"
-.user3 > .p5
-    &::after
-        content: "Local Austria • Yesterday"
-
-.user4 > .p4
-    &::after
-        content: "Mila Riksha"
-.user4 > .p5
-    &::after
-        content: "Local Austria • Yesterday"
-
-
-
 .slider-btn
     width: 599px
     height: 8px
@@ -544,7 +522,9 @@ h4
     background-color: #F5F7F6
     border-radius: 5px
 
-.slider-btn > div > div
+.fb-btn
+    position: relative
+    left: 2px
     background-color: #FE9013
     height: 6px
     margin-top: 1px
@@ -563,7 +543,7 @@ h4
     background: linear-gradient(113.96deg, #F9804B 1.49%, #FE9013 101.44%)
     border-radius: 5px
     color: white
-    margin: 31px 0 140px
+    margin: 11px 0 140px
     align-self: flex-start
     border: none
 
@@ -900,15 +880,6 @@ form > button
         background-size: 1265px
         background-position: 100% 103%
 
-
-    .user2
-        background-image: url('../../assets/images/user4.png')
-    .user2 > .p4
-        &::after
-            content: "Oska Samborska"
-    .user2 > .p5
-        &::after
-            content: "Local Austria • Yesterday"
     .user2 + .p5
         width: 250px !important
 
@@ -1355,10 +1326,6 @@ form > button
     .oldman-article > h5
         margin-left: 2px
         margin-bottom: 10px
-
-    .card6 > .title > p
-        &::after
-            content: 'Native to Southeastern United States'
 
     .pagBox
         min-height: 1388px
