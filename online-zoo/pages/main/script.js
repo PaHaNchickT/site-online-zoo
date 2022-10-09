@@ -177,6 +177,7 @@ boxResize()
 
 window.addEventListener('resize', function () {
     boxResize()
+    fbBtn.style.left = '2px'
 })
 
 ///////////////////////////////////////////filling/////////////////////////////////////
@@ -235,15 +236,11 @@ const fbBase = document.querySelector('.slider-btn')
 const fbBg = document.querySelector('.slider-bg')
 const sliderItems = document.querySelector('.slider-itms')
 let step
-// console.log(fbBtn)
-// console.log(feedback)
-// console.log(fbBase)
 
 /////////////////////////////////////////////fg-btn-engine/////////////////////////////////////////////
 
 fbBg.addEventListener('mousemove', function (event) {
     step = (fbBase.offsetWidth - fbBtn.offsetWidth/2 +8)/8
-    console.log(fbBtn.offsetWidth/2)
     if (event.which === 1 && (Math.round(event.clientX - fbBase.getBoundingClientRect().left - fbBtn.offsetWidth/2) >= 0) && (Math.round(event.clientX - fbBase.getBoundingClientRect().left + fbBtn.offsetWidth/2) <= 598.5)) {
         if (Math.round(event.clientX - fbBase.getBoundingClientRect().left - fbBtn.offsetWidth/2) >= 0 && Math.round(event.clientX - fbBase.getBoundingClientRect().left - fbBtn.offsetWidth/2) < step) {
             fbBtn.style.left = '2px'
@@ -269,9 +266,6 @@ fbBg.addEventListener('mousemove', function (event) {
         } else if (Math.round(event.clientX - fbBase.getBoundingClientRect().left - fbBtn.offsetWidth/2) >= 7*step && Math.round(event.clientX - fbBase.getBoundingClientRect().left - fbBtn.offsetWidth/2) < 8*step) {
             fbBtn.style.left = `${7*step}px`
             fbFill(7)
-        } else if (Math.round(event.clientX - fbBase.getBoundingClientRect().left - fbBtn.offsetWidth/2) >= 8*step && Math.round(event.clientX - fbBase.getBoundingClientRect().left - fbBtn.offsetWidth/2) < 9*step) {
-            fbBtn.style.left = `${8*step}px`
-            fbFill(8)
         }
     }
 })
@@ -305,4 +299,3 @@ function fbInner(pos, fb) {
     sliderItems.childNodes[pos].querySelectorAll('p')[2].textContent = `${fb.text}`
     sliderItems.childNodes[pos].querySelector('div').style.backgroundImage = `url(${fb.icon})`
 }
-
