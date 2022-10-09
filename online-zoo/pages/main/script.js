@@ -235,36 +235,38 @@ const fbBtn = document.querySelector('.fb-btn')
 const fbBase = document.querySelector('.slider-btn')
 const fbBg = document.querySelector('.slider-bg')
 const sliderItems = document.querySelector('.slider-itms')
+const userZero = document.querySelector('.user0')
+const fbExit = document.querySelector('.fb-exit')
 let step
 
 /////////////////////////////////////////////fg-btn-engine/////////////////////////////////////////////
 
 fbBg.addEventListener('mousemove', function (event) {
-    step = (fbBase.offsetWidth - fbBtn.offsetWidth/2 +8)/8
-    if (event.which === 1 && (Math.round(event.clientX - fbBase.getBoundingClientRect().left - fbBtn.offsetWidth/2) >= 0) && (Math.round(event.clientX - fbBase.getBoundingClientRect().left + fbBtn.offsetWidth/2) <= 598.5)) {
-        if (Math.round(event.clientX - fbBase.getBoundingClientRect().left - fbBtn.offsetWidth/2) >= 0 && Math.round(event.clientX - fbBase.getBoundingClientRect().left - fbBtn.offsetWidth/2) < step) {
+    step = (fbBase.offsetWidth - fbBtn.offsetWidth / 2 + 8) / 8
+    if (event.which === 1 && (Math.round(event.clientX - fbBase.getBoundingClientRect().left - fbBtn.offsetWidth / 2) >= 0) && (Math.round(event.clientX - fbBase.getBoundingClientRect().left + fbBtn.offsetWidth / 2) <= 598.5)) {
+        if (Math.round(event.clientX - fbBase.getBoundingClientRect().left - fbBtn.offsetWidth / 2) >= 0 && Math.round(event.clientX - fbBase.getBoundingClientRect().left - fbBtn.offsetWidth / 2) < step) {
             fbBtn.style.left = '2px'
             fbFill(0)
-        } else if (Math.round(event.clientX - fbBase.getBoundingClientRect().left - fbBtn.offsetWidth/2) >= step && Math.round(event.clientX - fbBase.getBoundingClientRect().left - fbBtn.offsetWidth/2) < 2*step) {
+        } else if (Math.round(event.clientX - fbBase.getBoundingClientRect().left - fbBtn.offsetWidth / 2) >= step && Math.round(event.clientX - fbBase.getBoundingClientRect().left - fbBtn.offsetWidth / 2) < 2 * step) {
             fbBtn.style.left = `${step}px`
             fbFill(1)
-        } else if (Math.round(event.clientX - fbBase.getBoundingClientRect().left - fbBtn.offsetWidth/2) >= 2*step && Math.round(event.clientX - fbBase.getBoundingClientRect().left - fbBtn.offsetWidth/2) < 3*step) {
-            fbBtn.style.left = `${2*step}px`
+        } else if (Math.round(event.clientX - fbBase.getBoundingClientRect().left - fbBtn.offsetWidth / 2) >= 2 * step && Math.round(event.clientX - fbBase.getBoundingClientRect().left - fbBtn.offsetWidth / 2) < 3 * step) {
+            fbBtn.style.left = `${2 * step}px`
             fbFill(2)
-        } else if (Math.round(event.clientX - fbBase.getBoundingClientRect().left - fbBtn.offsetWidth/2) >= 3*step && Math.round(event.clientX - fbBase.getBoundingClientRect().left - fbBtn.offsetWidth/2) < 4*step) {
-            fbBtn.style.left = `${3*step}px`
+        } else if (Math.round(event.clientX - fbBase.getBoundingClientRect().left - fbBtn.offsetWidth / 2) >= 3 * step && Math.round(event.clientX - fbBase.getBoundingClientRect().left - fbBtn.offsetWidth / 2) < 4 * step) {
+            fbBtn.style.left = `${3 * step}px`
             fbFill(3)
-        } else if (Math.round(event.clientX - fbBase.getBoundingClientRect().left - fbBtn.offsetWidth/2) >= 4*step && Math.round(event.clientX - fbBase.getBoundingClientRect().left - fbBtn.offsetWidth/2) < 5*step) {
-            fbBtn.style.left = `${4*step}px`
+        } else if (Math.round(event.clientX - fbBase.getBoundingClientRect().left - fbBtn.offsetWidth / 2) >= 4 * step && Math.round(event.clientX - fbBase.getBoundingClientRect().left - fbBtn.offsetWidth / 2) < 5 * step) {
+            fbBtn.style.left = `${4 * step}px`
             fbFill(4)
-        } else if (Math.round(event.clientX - fbBase.getBoundingClientRect().left - fbBtn.offsetWidth/2) >= 5*step && Math.round(event.clientX - fbBase.getBoundingClientRect().left - fbBtn.offsetWidth/2) < 6*step) {
-            fbBtn.style.left = `${5*step}px`
+        } else if (Math.round(event.clientX - fbBase.getBoundingClientRect().left - fbBtn.offsetWidth / 2) >= 5 * step && Math.round(event.clientX - fbBase.getBoundingClientRect().left - fbBtn.offsetWidth / 2) < 6 * step) {
+            fbBtn.style.left = `${5 * step}px`
             fbFill(5)
-        } else if (Math.round(event.clientX - fbBase.getBoundingClientRect().left - fbBtn.offsetWidth/2) >= 6*step && Math.round(event.clientX - fbBase.getBoundingClientRect().left - fbBtn.offsetWidth/2) < 7*step) {
-            fbBtn.style.left = `${6*step}px`
+        } else if (Math.round(event.clientX - fbBase.getBoundingClientRect().left - fbBtn.offsetWidth / 2) >= 6 * step && Math.round(event.clientX - fbBase.getBoundingClientRect().left - fbBtn.offsetWidth / 2) < 7 * step) {
+            fbBtn.style.left = `${6 * step}px`
             fbFill(6)
-        } else if (Math.round(event.clientX - fbBase.getBoundingClientRect().left - fbBtn.offsetWidth/2) >= 7*step && Math.round(event.clientX - fbBase.getBoundingClientRect().left - fbBtn.offsetWidth/2) < 8*step) {
-            fbBtn.style.left = `${7*step}px`
+        } else if (Math.round(event.clientX - fbBase.getBoundingClientRect().left - fbBtn.offsetWidth / 2) >= 7 * step && Math.round(event.clientX - fbBase.getBoundingClientRect().left - fbBtn.offsetWidth / 2) < 8 * step) {
+            fbBtn.style.left = `${7 * step}px`
             fbFill(7)
         }
     }
@@ -278,13 +280,13 @@ function fbFill(num) {
             case num: {
                 fbInner(1, e)
             }; break
-            case num+1: {
+            case num + 1: {
                 fbInner(3, e)
             }; break
-            case num+2: {
+            case num + 2: {
                 fbInner(5, e)
             }; break
-            case num+3: {
+            case num + 3: {
                 fbInner(7, e)
             }; break
         }
@@ -299,3 +301,44 @@ function fbInner(pos, fb) {
     sliderItems.childNodes[pos].querySelectorAll('p')[2].textContent = `${fb.text}`
     sliderItems.childNodes[pos].querySelector('div').style.backgroundImage = `url(${fb.icon})`
 }
+
+//////////////////////////////////////////////popup///////////////////////////////////////////
+
+
+function popupOpen(e) {
+    userZero.style.display = 'block'
+    splitter.style.display = 'block'
+    fbExit.style.display = 'block'
+    splitter.style.opacity = '0.5'
+    document.querySelector('html').style.overflowY = 'hidden'
+    if (e.className !== 'user0') {
+        userZero.querySelectorAll('p')[0].textContent = e.querySelectorAll('p')[0].textContent
+        userZero.querySelectorAll('p')[1].textContent = e.querySelectorAll('p')[1].textContent
+        userZero.querySelectorAll('p')[2].textContent = e.querySelectorAll('p')[2].textContent
+        userZero.querySelector('div').style.backgroundImage = e.querySelector('div').style.backgroundImage
+    }
+}
+function popupClose() {
+    userZero.style.display = 'none'
+    splitter.style.display = 'none'
+    fbExit.style.display = 'none'
+    document.querySelector('html').style.overflowY = 'visible'
+}
+
+sliderItems.childNodes.forEach(e => {
+    e.addEventListener('click', function () {
+        popupOpen(e)
+    })
+})
+
+fbExit.addEventListener('click', function (event) {
+    popupClose()
+})
+
+splitter.addEventListener('click', function () {
+    popupClose()
+})
+
+
+
+
