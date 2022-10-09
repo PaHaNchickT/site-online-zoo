@@ -63,10 +63,11 @@ btnL.addEventListener('click', function () {
         setTimeout(() => {
             divAdd.style.transition = '1s'
             divAdd.style.left = '0'
+            divAdd.style.opacity = '1'
+            divCenter.style.left = '-1193.6px'
         }, 1)
-        // divAdd.style.opacity = '1'
-        // divCenter.style.opacity = '0'
-        divCenter.style.left = '-1193.6px'
+        divCenter.style.opacity = '0'
+
         isClicked = true
     } else {
         divCenter.style.transition = '0s'
@@ -74,10 +75,11 @@ btnL.addEventListener('click', function () {
         setTimeout(() => {
             divCenter.style.transition = '1s'
             divCenter.style.left = '0'
+            divCenter.style.opacity = '1'
+            divAdd.style.opacity = '0'
         }, 1)
         divAdd.style.left = '-1193.6px'
-        // divAdd.style.opacity = '0'
-        // divCenter.style.opacity = '1'
+
         isClicked = false
     }
     divCenter.addEventListener('transitionend', function () { splitter.style.display = 'none' })
@@ -91,13 +93,10 @@ btnR.addEventListener('click', function () {
         setTimeout(() => {
             divAdd.style.transition = '1s'
             divAdd.style.left = '0'
+            divCenter.style.opacity = '0'
+            divAdd.style.opacity = '1'
         }, 1)
         divCenter.style.left = '1193.6px'
-        // divCenter.style.opacity = '0'
-        // divAdd.style.opacity = '1'
-        setTimeout(() => {
-            divCenter.style.left = '1193.6px';
-        }, 750)
         isClicked = true
         console.log(divCenter.getBoundingClientRect().left, divAdd.getBoundingClientRect().left)
     } else {
@@ -106,13 +105,10 @@ btnR.addEventListener('click', function () {
         setTimeout(() => {
             divCenter.style.transition = '1s'
             divCenter.style.left = '0'
+            divAdd.style.opacity = '0'
+            divCenter.style.opacity = '1'
         }, 1)
         divAdd.style.left = '1193.6px'
-        // divAdd.style.opacity = '0'
-        // divCenter.style.opacity = '1'
-        setTimeout(() => {
-            divAdd.style.left = '1193.6px'
-        }, 750)
         isClicked = false
         console.log(divCenter.getBoundingClientRect().left, divAdd.getBoundingClientRect().left)
     }
