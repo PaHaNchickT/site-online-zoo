@@ -58,7 +58,6 @@ button
     &:active
         background-color: #4B9200
 
-
 .menu
     @include flex(space-between)
     flex-basis: 472px
@@ -219,13 +218,11 @@ h5
     min-height: 892px
     overflow: hidden
     position: relative
-    // padding: 0 auto
 
 .pag
     @include flex(center)
     flex-wrap: wrap
     align-content: space-between
-    // width: 1188px
     
 .pagMain
     position: absolute
@@ -270,6 +267,7 @@ h5
 
 h6
     @include font(500, 16px, 22.4px)
+    width: 100%
 
 .pag > div > div > p
     @include font(300, 15px, 18px)
@@ -277,68 +275,14 @@ h6
 
 h6
     margin-left: 16px
-
-.card1
-    background-image: url('../../assets/images/animal1.png')
-.card2
-    background-image: url('../../assets/images/animal2.png')
-.card3
-    background-image: url('../../assets/images/animal3.png')
-.card4
-    background-image: url('../../assets/images/animal4.png')
-.card5
-    background-image: url('../../assets/images/animal5.png')
-.card6
-    background-image: url('../../assets/images/animal6.png')
-
-.card1 > .title > h6
-    &::after
-        content: 'GIANT PANDAS'
-.card1 > .title > p
-    &::after
-        content: 'Native to Southwest China'
-
-.card2 > .title > h6
-    &::after
-        content: 'EAGLES'
-.card2 > .title > p
-    &::after
-        content: 'Native to South America'
-
-.card3 > .title > h6
-    &::after
-        content: 'GORILLAS'
-.card3 > .title > p
-    &::after
-        content: 'Native to Congo'
-
-.card4 > .title > h6
-    &::after
-        content: 'TWO-TOED SLOTH'
-.card4 > .title > p
-    &::after
-        content: 'Mesoamerica, South America'
-
-.card5 > .title > h6
-    &::after
-        content: 'CHEETAHS'
-.card5 > .title > p
-    &::after
-        content: 'Native to Africa'
-
-.card6 > .title > h6
-    &::after
-        content: 'PENGUINS'
-.card6 > .title > p
-    &::after
-        content: 'Native to Antarctica'
-
-
+    
 .banana
-    @include img('../../assets/icons/banana-bamboo_icon.svg', 321px 10px)
+    background-position: 321px 10px
+    background-repeat: no-repeat
 
 .fish
-    @include img('../../assets/icons/meet-fish_icon.svg', 310px 8px)
+    background-position: 310px 8px
+    background-repeat: no-repeat
 
 .buttons
     position: relative
@@ -878,37 +822,6 @@ form > button
         background-size: 97%
         background-position: -194px 258px
 
-    .card3
-        background-image: url('../../assets/images/animal5.png')
-    .card4
-        background-image: url('../../assets/images/animal3.png')
-    .card5
-        background-image: url('../../assets/images/animal7.png')
-
-    .card3 > .title
-        @include img('../../assets/icons/meet-fish_icon.svg', 235px 8px)
-
-    .card3 > .title > h6
-        &::after
-            content: 'CHEETAHS'
-    .card3 > .title > p
-        &::after
-            content: 'Native to Africa'
-
-    .card4 > .title > h6
-        &::after
-            content: 'GORRILAS'
-    .card4 > .title > p
-        &::after
-            content: 'Native to Congo'
-
-    .card5 > .title > h6
-        &::after
-            content: 'ALLIGATORS'
-    .card5 > .title > p
-        &::after
-            content: 'Native to Southeastern U. S.'
-
     .banana
         background-position: 245px 10px
 
@@ -1194,28 +1107,11 @@ form > button
         background-size: 96%
         z-index: 1
 
-    .card5
-        background-image: url('../../assets/images/animal3.png')
-    .card6
-        background-image: url('../../assets/images/animal7.png')
 
-    .card5 > .title
-        background-image: url('../../assets/icons/banana-bamboo_icon.svg')
-        background-size: 25.72px
-        background-position-x: 248px
-    .card5 > .title > h6
-        &::after
-            content: 'GORRILAS'
-    .card5 > .title > p
-        &::after
-            content: 'Native to Congo'
-
-    .card6 > .title > h6
-        &::after
-            content: 'ALLIGATORS'
-    .card6 > .title > p
-        &::after
-            content: 'Native to Southeastern U. S.'
+    // .card5 > .title
+    //     background-image: url('../../assets/icons/banana-bamboo_icon.svg')
+    //     background-size: 25.72px
+    //     background-position-x: 248px
 
     ////////////////////////////////////////////section3///////////////////////////////////////////
 
@@ -1628,4 +1524,3 @@ form > button
         font-size: 15px
         line-height: 18px
         margin-bottom: 13px
-        

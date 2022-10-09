@@ -402,6 +402,7 @@ h6 {
   line-height: 22.4px;
   text-align: left;
   letter-spacing: 0;
+  width: 100%;
 }
 
 .pag > div > div > p {
@@ -417,88 +418,14 @@ h6 {
   margin-left: 16px;
 }
 
-.card1 {
-  background-image: url("../../assets/images/animal1.png");
-}
-
-.card2 {
-  background-image: url("../../assets/images/animal2.png");
-}
-
-.card3 {
-  background-image: url("../../assets/images/animal3.png");
-}
-
-.card4 {
-  background-image: url("../../assets/images/animal4.png");
-}
-
-.card5 {
-  background-image: url("../../assets/images/animal5.png");
-}
-
-.card6 {
-  background-image: url("../../assets/images/animal6.png");
-}
-
-.card1 > .title > h6::after {
-  content: 'GIANT PANDAS';
-}
-
-.card1 > .title > p::after {
-  content: 'Native to Southwest China';
-}
-
-.card2 > .title > h6::after {
-  content: 'EAGLES';
-}
-
-.card2 > .title > p::after {
-  content: 'Native to South America';
-}
-
-.card3 > .title > h6::after {
-  content: 'GORILLAS';
-}
-
-.card3 > .title > p::after {
-  content: 'Native to Congo';
-}
-
-.card4 > .title > h6::after {
-  content: 'TWO-TOED SLOTH';
-}
-
-.card4 > .title > p::after {
-  content: 'Mesoamerica, South America';
-}
-
-.card5 > .title > h6::after {
-  content: 'CHEETAHS';
-}
-
-.card5 > .title > p::after {
-  content: 'Native to Africa';
-}
-
-.card6 > .title > h6::after {
-  content: 'PENGUINS';
-}
-
-.card6 > .title > p::after {
-  content: 'Native to Antarctica';
-}
-
 .banana {
-  background-image: url("../../assets/icons/banana-bamboo_icon.svg");
-  background-repeat: no-repeat;
   background-position: 321px 10px;
+  background-repeat: no-repeat;
 }
 
 .fish {
-  background-image: url("../../assets/icons/meet-fish_icon.svg");
-  background-repeat: no-repeat;
   background-position: 310px 8px;
+  background-repeat: no-repeat;
 }
 
 .buttons {
@@ -1297,38 +1224,6 @@ form > button {
     background-size: 97%;
     background-position: -194px 258px;
   }
-  .card3 {
-    background-image: url("../../assets/images/animal5.png");
-  }
-  .card4 {
-    background-image: url("../../assets/images/animal3.png");
-  }
-  .card5 {
-    background-image: url("../../assets/images/animal7.png");
-  }
-  .card3 > .title {
-    background-image: url("../../assets/icons/meet-fish_icon.svg");
-    background-repeat: no-repeat;
-    background-position: 235px 8px;
-  }
-  .card3 > .title > h6::after {
-    content: 'CHEETAHS';
-  }
-  .card3 > .title > p::after {
-    content: 'Native to Africa';
-  }
-  .card4 > .title > h6::after {
-    content: 'GORRILAS';
-  }
-  .card4 > .title > p::after {
-    content: 'Native to Congo';
-  }
-  .card5 > .title > h6::after {
-    content: 'ALLIGATORS';
-  }
-  .card5 > .title > p::after {
-    content: 'Native to Southeastern U. S.';
-  }
   .banana {
     background-position: 245px 10px;
   }
@@ -1608,29 +1503,6 @@ form > button {
     top: -458px;
     background-size: 96%;
     z-index: 1;
-  }
-  .card5 {
-    background-image: url("../../assets/images/animal3.png");
-  }
-  .card6 {
-    background-image: url("../../assets/images/animal7.png");
-  }
-  .card5 > .title {
-    background-image: url("../../assets/icons/banana-bamboo_icon.svg");
-    background-size: 25.72px;
-    background-position-x: 248px;
-  }
-  .card5 > .title > h6::after {
-    content: 'GORRILAS';
-  }
-  .card5 > .title > p::after {
-    content: 'Native to Congo';
-  }
-  .card6 > .title > h6::after {
-    content: 'ALLIGATORS';
-  }
-  .card6 > .title > p::after {
-    content: 'Native to Southeastern U. S.';
   }
   .section3 {
     min-height: 761px;

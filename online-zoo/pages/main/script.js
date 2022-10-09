@@ -1,3 +1,7 @@
+import animals from './animals.js';
+// import vars from './style.sass';
+// console.log(variables)
+
 const body = document.querySelector('body')
 const input = document.querySelector('input')
 const inputfocus = document.querySelector('input:focus')
@@ -40,28 +44,32 @@ pagdiv.forEach(e => {
 })
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////
-///////////////////////////////////////////////carousel//////////////////////////////////////////////
+//////////////////////////////////////////////pagination/////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
 const pagBox = document.querySelector('.pagBox')
 const pagEl = document.getElementsByClassName('card1')[0]
 const btnL = document.querySelector('.btnL')
 const btnR = document.querySelector('.btnR')
-const pagMain = document.querySelector('.pagMain')
-const pagAdd = document.querySelector('.pagAdd')
 const splitter = document.querySelector('.splitter')
 
 /////////////////////////////////////////////////core////////////////////////////////////////////////
 
+let divCustom
 let divCenter = pagBox.childNodes[1]
 let divAdd = pagBox.childNodes[3]
 let isClicked = false
 let n
+
+pagFill('center')
+pagFill('add')
+
 btnL.addEventListener('click', function () {
     splitter.style.display = 'block'
     if (isClicked === false) {
         divAdd.style.transition = '0s'
         divAdd.style.left = '1193.6px'
+        pagFill('add')
         setTimeout(() => {
             divAdd.style.transition = '1s'
             divAdd.style.left = '0'
@@ -73,6 +81,7 @@ btnL.addEventListener('click', function () {
     } else {
         divCenter.style.transition = '0s'
         divCenter.style.left = '1193.6px'
+        pagFill('center')
         setTimeout(() => {
             divCenter.style.transition = '1s'
             divCenter.style.left = '0'
@@ -90,6 +99,7 @@ btnR.addEventListener('click', function () {
     if (isClicked === false) {
         divAdd.style.transition = '0s'
         divAdd.style.left = '-1193.6px'
+        pagFill('add')
         setTimeout(() => {
             divAdd.style.transition = '1s'
             divAdd.style.left = '0'
@@ -101,6 +111,7 @@ btnR.addEventListener('click', function () {
     } else {
         divCenter.style.transition = '0s'
         divCenter.style.left = '-1193.6px'
+        pagFill('center')
         setTimeout(() => {
             divCenter.style.transition = '1s'
             divCenter.style.left = '0'
@@ -113,53 +124,33 @@ btnR.addEventListener('click', function () {
     divCenter.addEventListener('transitionend', function () { splitter.style.display = 'none' })
 })
 
-function boxResize() {
-    console.log(pagBox.clientWidth / (pagEl.clientWidth + 34))
-    console.log(pagEl.clientWidth)
+function pageReload() {
+    if (window.localStorage) {
+        if (!localStorage.getItem('firstLoad')) {
+            localStorage['firstLoad'] = true;
+            window.location.reload();
+        }
+        else
+            localStorage.removeItem('firstLoad');
+    }
+}
 
+function boxResize() {
     switch (window.screen.width) {
         case 1600: (function () {
-            if (window.localStorage) {
-                if (!localStorage.getItem('firstLoad')) {
-                    localStorage['firstLoad'] = true;
-                    window.location.reload();
-                }
-                else
-                    localStorage.removeItem('firstLoad');
-            }
+            pageReload()
         })()
             break;
         case 1000: (function () {
-            if (window.localStorage) {
-                if (!localStorage.getItem('firstLoad')) {
-                    localStorage['firstLoad'] = true;
-                    window.location.reload();
-                }
-                else
-                    localStorage.removeItem('firstLoad');
-            }
+            pageReload()
         })()
             break;
         case 640: (function () {
-            if (window.localStorage) {
-                if (!localStorage.getItem('firstLoad')) {
-                    localStorage['firstLoad'] = true;
-                    window.location.reload();
-                }
-                else
-                    localStorage.removeItem('firstLoad');
-            }
+            pageReload()
         })()
             break;
         case 320: (function () {
-            if (window.localStorage) {
-                if (!localStorage.getItem('firstLoad')) {
-                    localStorage['firstLoad'] = true;
-                    window.location.reload();
-                }
-                else
-                    localStorage.removeItem('firstLoad');
-            }
+            pageReload()
         })()
             break;
     }
@@ -178,7 +169,6 @@ function boxResize() {
         divCenter.style.width = `${(pagEl.clientWidth + 4) * n + 24}px`
     } else if (window.screen.width >= 320 && window.screen.width < 640) {
         n = Math.floor((pagBox.clientWidth / (pagEl.clientWidth + 4)))
-        console.log(n)
         divAdd.style.width = `${(pagEl.clientWidth + 4) * n + 4}px`
         divCenter.style.width = `${(pagEl.clientWidth + 4) * n + 4}px`
     }
@@ -189,3 +179,50 @@ boxResize()
 window.addEventListener('resize', function () {
     boxResize()
 })
+
+///////////////////////////////////////////filling/////////////////////////////////////
+
+function pagFill(divType) {
+    let count = []
+    let i = 0
+    let change = 0
+    while (count.length < 7) {
+        count.push(i)
+        i++
+    }
+    i = 0
+
+    if (divType === 'center') {
+        divCustom = pagBox.childNodes[1]
+    } else {
+        divCustom = pagBox.childNodes[3]
+    }
+
+    animalChange()
+
+    function animalChange() {
+        let value = Math.floor(Math.random() * 7)
+        if (typeof count[value] !== 'string') {
+            count[value] = 'none'
+            i++
+            if ((i + change) < 12) {
+                divCustom.childNodes[i + change].style.backgroundImage = `url(${animals[value]['pic']})`
+                divCustom.childNodes[i + change].querySelector('div').style.backgroundImage = `url(${animals[value]['food']})`
+                divCustom.childNodes[i + change].querySelector('div').querySelector('h6').textContent = animals[value]['name']
+                divCustom.childNodes[i + change].querySelector('div').querySelector('p').textContent = animals[value]['loc']
+                if (animals[value]['food'].slice(19, 23) === 'bana') {
+                    divCustom.childNodes[i + change].querySelector('div').classList.add('banana')
+                    divCustom.childNodes[i + change].querySelector('div').classList.remove('fish')
+                } else {
+                    divCustom.childNodes[i + change].querySelector('div').classList.remove('banana')
+                    divCustom.childNodes[i + change].querySelector('div').classList.add('fish')
+                }
+            }
+            change++
+            animalChange()
+        } else if ((typeof count[value] === 'string') && i < 7) {
+            animalChange()
+        }
+    }
+
+}
