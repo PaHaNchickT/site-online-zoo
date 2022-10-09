@@ -98,7 +98,6 @@ btnR.addEventListener('click', function () {
         }, 1)
         divCenter.style.left = '1193.6px'
         isClicked = true
-        console.log(divCenter.getBoundingClientRect().left, divAdd.getBoundingClientRect().left)
     } else {
         divCenter.style.transition = '0s'
         divCenter.style.left = '-1193.6px'
@@ -110,7 +109,6 @@ btnR.addEventListener('click', function () {
         }, 1)
         divAdd.style.left = '1193.6px'
         isClicked = false
-        console.log(divCenter.getBoundingClientRect().left, divAdd.getBoundingClientRect().left)
     }
     divCenter.addEventListener('transitionend', function () { splitter.style.display = 'none' })
 })
