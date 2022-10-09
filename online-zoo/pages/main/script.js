@@ -341,6 +341,41 @@ splitter.addEventListener('click', function () {
     popupClose()
 })
 
+/////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////burger///////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////////////
 
+const burger = document.querySelector('.burger')
+const burgerExit = document.querySelector('.burger-exit')
+const menu = document.querySelector('.menu')
+const burgerSplitter = document.querySelector('.burger-splitter')
+const logo = document.querySelector('.logo')
+const by = document.querySelector('.by')
 
+burger.addEventListener('click', function() {
+    burgerOpen()
+})
+burgerExit.addEventListener('click', function() {
+    burgerClose()
+})
+burgerSplitter.addEventListener('click', function() {
+    burgerClose()
+})
 
+function burgerOpen() {
+    menu.style.display = 'block'
+    by.style.display = 'block'
+    burgerSplitter.style.display = 'block'
+    burgerSplitter.style.opacity = '0.5'
+    burgerExit.style.display = 'block'
+    logo.classList.add('burger-on')
+}
+
+function burgerClose() {
+    menu.style.display = 'none'
+    by.style.display = 'none'
+    burgerSplitter.style.display = 'none'
+    burgerSplitter.style.opacity = '0'
+    burgerExit.style.display = 'none'
+    logo.classList.remove('burger-on')
+}

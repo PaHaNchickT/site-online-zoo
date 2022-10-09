@@ -30,7 +30,7 @@ body
     padding: 0
     font-family: Roboto
 
-.splitter
+.splitter, .burger-splitter
     display: none
     background-color: black
     opacity: 0
@@ -87,6 +87,7 @@ a
     border: 1px solid white
     align-self: center
     border-radius: 2px
+    z-index: 10
 
 .petstory
     @include font(400, 19.01px, 22.82px, center)
@@ -958,8 +959,54 @@ form > button
     header > .logo > .petstory
         @include font(400, 12.29px, 14.75px, center)
 
-    .by, .menu-off, .empty
+    .empty, .by
         display: none
+
+    .menu
+        display: none
+        position: fixed
+        height: 170px
+        margin: 0
+        left: 0
+        top: 0
+        padding-left: 10px
+        padding-top: 81px
+        padding-bottom: 77px
+        flex-direction: column
+        background-color: white
+        width: 100%
+    .menu > li > a, .by > a
+        color: black
+    .menu > li
+        color: black
+        margin-bottom: 15px
+    .by
+        z-index: 11
+        position: absolute
+        margin: 0
+        left: 10px
+        top: 267px
+    .burger-on
+        border: 1px solid orange !important
+        position: fixed
+        top: 10px
+        left: 10px
+        width: 64px
+        height: 41px !important
+    .burger-on > .petstory
+        font-size: 15.21px !important
+        line-height: 18.25px !important
+    .burger-on > .petstory > a
+        color: orange
+    .burger-exit
+        display: none
+        width: 14px
+        height: 14px
+        position: fixed
+        z-index: 11
+        background-image: url('../../assets/icons/fb-exit.svg')
+        right: 21.5px
+        top: 10px
 
     .burger
         @include img('../../assets/icons/burger_menu.svg')
