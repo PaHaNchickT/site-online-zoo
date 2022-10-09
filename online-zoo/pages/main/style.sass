@@ -216,16 +216,16 @@ h5
 
 .pagBox
     margin: 0 12.7% 80px
-    max-width: 1200px
     min-height: 892px
     overflow: hidden
     position: relative
+    // padding: 0 auto
 
 .pag
     @include flex(center)
     flex-wrap: wrap
     align-content: space-between
-    max-width: 1188px
+    // width: 1188px
     
 .pagMain
     position: absolute
@@ -342,6 +342,7 @@ h6
 
 .buttons
     position: relative
+    z-index: 9
 
 .buttons > div
     &:hover
@@ -835,6 +836,7 @@ form > button
 
     .pag
         justify-content: space-between
+        max-height: 801px
 
     .pag > div
         width: 290px
@@ -862,7 +864,7 @@ form > button
         top: 368px
 
     .btn2
-        margin: -12px calc((100vw - 298px)/2 - 30px) 140px
+        margin: 80px calc((100vw - 298px)/2 - 30px) 140px
 
     .strel
         right: -30px
@@ -1175,7 +1177,7 @@ form > button
         top: 342px
 
     .btn2
-        margin: 0 calc((100vw - 298px)/2 - 20px) 67px
+        margin: 90px calc((100vw - 298px)/2 - 20px) 67px
         position: relative
         top: -32px
         z-index: 5
@@ -1462,13 +1464,16 @@ form > button
         &::after
             content: 'Native to Southeastern United States'
 
+    .pagBox
+        min-height: 1388px
+
     .pag > div
         width: 282px
         height: 328px
         margin: 0 0 20px
 
     .btn2
-        margin: 0 calc((100vw - 298px)/2 - 10px) 60px
+        margin: 20px calc((100vw - 298px)/2 - 10px) 60px
         position: static
         top: -32px
         z-index: 5
