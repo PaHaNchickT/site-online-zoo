@@ -64,6 +64,7 @@ pagFill('center')
 pagFill('add')
 
 btnL.addEventListener('click', function () {
+    splitter.style.opacity = 0
     splitter.style.display = 'block'
     if (isClicked === false) {
         divAdd.style.transition = '0s'
@@ -94,6 +95,7 @@ btnL.addEventListener('click', function () {
 })
 
 btnR.addEventListener('click', function () {
+    splitter.style.opacity = 0
     splitter.style.display = 'block'
     if (isClicked === false) {
         divAdd.style.transition = '0s'

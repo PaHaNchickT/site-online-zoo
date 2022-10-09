@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap')
 
 @mixin flex($just: flex-start, $align: stretch)
     display: flex
@@ -50,7 +50,7 @@ header
 
 ul, p, h1, h2, h3, h4, h5, h6, nav
     margin: 0
-    
+
 button
     &:hover
         background: #E47209
@@ -223,7 +223,7 @@ h5
     @include flex(center)
     flex-wrap: wrap
     align-content: space-between
-    
+
 .pagMain
     position: absolute
     top: 0
@@ -275,7 +275,7 @@ h6
 
 h6
     margin-left: 16px
-    
+
 .banana
     background-position: 321px 10px
     background-repeat: no-repeat
@@ -347,7 +347,7 @@ h6
     margin: 0 auto
     display: flex
     flex-direction: column
-    
+
 h3
     @include font(400, 48px, 57.6px, center)
     color: #FE9013
@@ -420,7 +420,7 @@ h4
 .itm2, .itm4
     @include img('../../assets/icons/arrow2.svg')
     flex-basis: 89px
-    
+
 .itm2
     background-position: 50% 29%
 .itm4
@@ -489,11 +489,9 @@ h4
     height: 14px
     width: 14px
     background-image: url('../../assets/icons/fb-exit.svg')
-    position: absolute
-    top: 0
-    left: 0
-    top: -405px
-    left: 695px
+    position: fixed
+    top: calc((100vh - 14px)*0.329)
+    left: calc((100vw - 14px)*0.599)
     cursor: pointer
     display: none
     z-index: 11
@@ -563,7 +561,7 @@ h4
 
 .rel
     position: relative
-    
+
 .leav
     @include img('../../assets/images/section4-bg.png', 100% 100%)
     position: absolute
@@ -616,7 +614,7 @@ footer
     &:hover
         cursor: pointer
         color: green
-    
+
 ul
     padding: 0
 
@@ -704,14 +702,14 @@ form > button
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
 @media screen and (max-width: $desktop)
-    header 
+    header
         padding: 0
-        position: relative  
+        position: relative
         z-index: 6
 
     .logo
         flex-basis: 87px
-        margin-left: 30px 
+        margin-left: 30px
 
     .by
         margin-right: 30px
@@ -748,7 +746,7 @@ form > button
         min-height: 1556px
         padding-top: 100px
         padding: 100px 30px 0
-    
+
     .oldman
         max-width: 940px
         min-height: 427px
@@ -897,6 +895,9 @@ form > button
     .user2 + .p5
         width: 250px !important
 
+    .fb-exit
+        top: calc((100vh - 14px)*0.22)
+        left: calc((100vw - 14px)*0.675)
 
     /////////////////////////////////////////////footer//////////////////////////////////////////
 
@@ -954,7 +955,6 @@ form > button
         flex-basis: 46.93px
         margin-left: 0
 
-
     header > .logo > .petstory
         @include font(400, 12.29px, 14.75px, center)
 
@@ -985,7 +985,7 @@ form > button
         height: 237.6px
         left: calc((100vw - 237.6px)*0.82)
         top: 45px
-        position: 
+        position:
         z-index: 1
 
     h1
@@ -993,7 +993,7 @@ form > button
         line-height: 40.72px
         left: calc((100vw - 255.64px)*0.97)
         top: 83px
-        position: 
+        position:
         z-index: 1
 
     .watch
@@ -1007,7 +1007,7 @@ form > button
         padding: 60px 20px 0
         overflow: hidden
         background-image: url('../../assets/images/section2-bg-small.png')
-    
+
     .oldman
         min-height: 367px
         margin-bottom: 80px
@@ -1092,12 +1092,6 @@ form > button
         background-size: 96%
         z-index: 1
 
-
-    // .card5 > .title
-    //     background-image: url('../../assets/icons/banana-bamboo_icon.svg')
-    //     background-size: 25.72px
-    //     background-position-x: 248px
-
     ////////////////////////////////////////////section3///////////////////////////////////////////
 
     .section3
@@ -1139,7 +1133,7 @@ form > button
 
     .items > div
         margin-bottom: 40px
-    
+
     .img1, .img2
         &::after
             @include img('../../assets/icons/arrow-small.svg')
@@ -1148,7 +1142,7 @@ form > button
             width: 89px
             height: 29px
             position: absolute
-            
+
     .img1
         &::after
             left: calc((100vw - 89px)*0.25)
@@ -1176,7 +1170,7 @@ form > button
         min-height: 340px
         margin: 0 auto
         padding: 0 20px
-    
+
     .slider-itms > div
         max-width: 100%
         flex-basis: 600px
@@ -1208,6 +1202,15 @@ form > button
 
     .user2 + .p5
         width: 600px !important
+
+    .user0
+        top: calc((100vh - 110px)/2)
+        left: calc((100vw - 600px)/2)
+        right: 20px
+
+    .fb-exit
+        top: calc((100vh - 14px)*0.4)
+        left: calc((100vw - 14px)*0.965)
 
     /////////////////////////////////////////////////footer//////////////////////////////////////////////////
 
@@ -1322,7 +1325,7 @@ form > button
         padding: 104px 10px 0
         @include img(url('../../assets/images/section2-bg-small.png'), 55px 40.5px)
         background-size: 292px
-    
+
     .oldman
         margin-bottom: 40px
 
@@ -1394,7 +1397,6 @@ form > button
 
     .items > div
         margin: 1px 0 40px 11px
-    
 
     .items > div > p
         margin-top: 10px
@@ -1433,7 +1435,7 @@ form > button
         min-height: 340px
         margin: 0 auto
         padding: 0 10px 0 11px
-    
+
     .slider-itms > div
         min-height: 99px
         padding: 10px 12px 0
@@ -1459,6 +1461,11 @@ form > button
 
     .leav
         display: none
+
+    .user0
+        top: calc((100vh - 109px)/2)
+        left: calc((100vw - 299px)/2)
+        right: 10px
 
     // /////////////////////////////////////////////////footer//////////////////////////////////////////////////
 
