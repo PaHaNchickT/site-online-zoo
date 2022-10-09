@@ -346,7 +346,7 @@ h5 {
   left: 1193.6px;
   -webkit-transition: 1s;
   transition: 1s;
-  opacity: 0;
+  opacity: 1;
 }
 
 .pag > div {
