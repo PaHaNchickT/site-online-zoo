@@ -244,9 +244,9 @@ let step
 
 /////////////////////////////////////////////fg-btn-engine/////////////////////////////////////////////
 
-fbBg.addEventListener('mousemove', function (event) {
-    step = (fbBase.offsetWidth - fbBtn.offsetWidth / 2 + 8) / 8
-    if (event.which === 1 && (Math.round(event.clientX - fbBase.getBoundingClientRect().left - fbBtn.offsetWidth / 2) >= 0) && (Math.round(event.clientX - fbBase.getBoundingClientRect().left + fbBtn.offsetWidth / 2) <= 598.5)) {
+function feedBack(event) {
+    step = (fbBase.offsetWidth - fbBtn.offsetWidth / 2 + 8) / 8 
+    if ((event.force === 1 || event.which === 1) && (Math.round(event.clientX - fbBase.getBoundingClientRect().left - fbBtn.offsetWidth / 2) >= 0) && (Math.round(event.clientX - fbBase.getBoundingClientRect().left + fbBtn.offsetWidth / 2) <= 598.5)) {
         if (Math.round(event.clientX - fbBase.getBoundingClientRect().left - fbBtn.offsetWidth / 2) >= 0 && Math.round(event.clientX - fbBase.getBoundingClientRect().left - fbBtn.offsetWidth / 2) < step) {
             fbBtn.style.left = '2px'
             fbFill(0)
@@ -273,7 +273,46 @@ fbBg.addEventListener('mousemove', function (event) {
             fbFill(7)
         }
     }
+}
+
+fbBg.addEventListener('mousemove', function (event) {
+    feedBack(event)
 })
+
+fbBg.addEventListener('touchmove', function (event) {
+    feedBack(event.touches[0])
+})
+
+// fbBg.addEventListener('mousemove', function (event) {
+//     step = (fbBase.offsetWidth - fbBtn.offsetWidth / 2 + 8) / 8
+//     if (event.which === 1 && (Math.round(event.clientX - fbBase.getBoundingClientRect().left - fbBtn.offsetWidth / 2) >= 0) && (Math.round(event.clientX - fbBase.getBoundingClientRect().left + fbBtn.offsetWidth / 2) <= 598.5)) {
+//         if (Math.round(event.clientX - fbBase.getBoundingClientRect().left - fbBtn.offsetWidth / 2) >= 0 && Math.round(event.clientX - fbBase.getBoundingClientRect().left - fbBtn.offsetWidth / 2) < step) {
+//             fbBtn.style.left = '2px'
+//             fbFill(0)
+//         } else if (Math.round(event.clientX - fbBase.getBoundingClientRect().left - fbBtn.offsetWidth / 2) >= step && Math.round(event.clientX - fbBase.getBoundingClientRect().left - fbBtn.offsetWidth / 2) < 2 * step) {
+//             fbBtn.style.left = `${step}px`
+//             fbFill(1)
+//         } else if (Math.round(event.clientX - fbBase.getBoundingClientRect().left - fbBtn.offsetWidth / 2) >= 2 * step && Math.round(event.clientX - fbBase.getBoundingClientRect().left - fbBtn.offsetWidth / 2) < 3 * step) {
+//             fbBtn.style.left = `${2 * step}px`
+//             fbFill(2)
+//         } else if (Math.round(event.clientX - fbBase.getBoundingClientRect().left - fbBtn.offsetWidth / 2) >= 3 * step && Math.round(event.clientX - fbBase.getBoundingClientRect().left - fbBtn.offsetWidth / 2) < 4 * step) {
+//             fbBtn.style.left = `${3 * step}px`
+//             fbFill(3)
+//         } else if (Math.round(event.clientX - fbBase.getBoundingClientRect().left - fbBtn.offsetWidth / 2) >= 4 * step && Math.round(event.clientX - fbBase.getBoundingClientRect().left - fbBtn.offsetWidth / 2) < 5 * step) {
+//             fbBtn.style.left = `${4 * step}px`
+//             fbFill(4)
+//         } else if (Math.round(event.clientX - fbBase.getBoundingClientRect().left - fbBtn.offsetWidth / 2) >= 5 * step && Math.round(event.clientX - fbBase.getBoundingClientRect().left - fbBtn.offsetWidth / 2) < 6 * step) {
+//             fbBtn.style.left = `${5 * step}px`
+//             fbFill(5)
+//         } else if (Math.round(event.clientX - fbBase.getBoundingClientRect().left - fbBtn.offsetWidth / 2) >= 6 * step && Math.round(event.clientX - fbBase.getBoundingClientRect().left - fbBtn.offsetWidth / 2) < 7 * step) {
+//             fbBtn.style.left = `${6 * step}px`
+//             fbFill(6)
+//         } else if (Math.round(event.clientX - fbBase.getBoundingClientRect().left - fbBtn.offsetWidth / 2) >= 7 * step && Math.round(event.clientX - fbBase.getBoundingClientRect().left - fbBtn.offsetWidth / 2) < 8 * step) {
+//             fbBtn.style.left = `${7 * step}px`
+//             fbFill(7)
+//         }
+//     }
+// })
 
 /////////////////////////////////////////////fb-btn-filling/////////////////////////////////////////////
 
@@ -353,13 +392,13 @@ const burgerSplitter = document.querySelector('.burger-splitter')
 const logo = document.querySelector('.logo')
 const by = document.querySelector('.by')
 
-burger.addEventListener('click', function() {
+burger.addEventListener('click', function () {
     burgerOpen()
 })
-burgerExit.addEventListener('click', function() {
+burgerExit.addEventListener('click', function () {
     burgerClose()
 })
-burgerSplitter.addEventListener('click', function() {
+burgerSplitter.addEventListener('click', function () {
     burgerClose()
 })
 
