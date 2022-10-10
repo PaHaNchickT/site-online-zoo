@@ -53,6 +53,7 @@ const pagEl = document.getElementsByClassName('card1')[0]
 const btnL = document.querySelector('.btnL')
 const btnR = document.querySelector('.btnR')
 const splitter = document.querySelector('.splitter')
+const pagSplitter = document.querySelector('.pag-splitter')
 
 /////////////////////////////////////////////////engine////////////////////////////////////////////////
 
@@ -66,8 +67,7 @@ pagFill('center')
 pagFill('add')
 
 btnL.addEventListener('click', function () {
-    splitter.style.opacity = 0
-    splitter.style.display = 'block'
+    pagSplitter.style.display = 'block'
     if (isClicked === false) {
         divAdd.style.transition = '0s'
         divAdd.style.left = '1193.6px'
@@ -93,12 +93,11 @@ btnL.addEventListener('click', function () {
         divAdd.style.opacity = '0'
         isClicked = false
     }
-    divCenter.addEventListener('transitionend', function () { splitter.style.display = 'none' })
+    divCenter.addEventListener('transitionend', function () { pagSplitter.style.display = 'none' })
 })
 
 btnR.addEventListener('click', function () {
-    splitter.style.opacity = 0
-    splitter.style.display = 'block'
+    pagSplitter.style.display = 'block'
     if (isClicked === false) {
         divAdd.style.transition = '0s'
         divAdd.style.left = '-1193.6px'
@@ -124,7 +123,7 @@ btnR.addEventListener('click', function () {
         divAdd.style.left = '1193.6px'
         isClicked = false
     }
-    divCenter.addEventListener('transitionend', function () { splitter.style.display = 'none' })
+    divCenter.addEventListener('transitionend', function () { pagSplitter.style.display = 'none' })
 })
 
 function pageReload() {

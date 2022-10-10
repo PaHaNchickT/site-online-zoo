@@ -9,7 +9,7 @@ body {
   font-family: Roboto;
 }
 
-.splitter, .burger-splitter {
+.splitter, .burger-splitter, .pag-splitter {
   display: none;
   background-color: black;
   opacity: 0;
