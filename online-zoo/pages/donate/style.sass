@@ -142,9 +142,11 @@ section > h2
     margin-bottom: 10px
 
 section > .p2
-    max-width: 1160px
-    margin: 0 auto 45px
+    max-width: 1139px
+    margin: 0 calc((100vw - 1139px)/2) 45px
     letter-spacing: 0.08px
+    font-size: 12px
+    line-height: 20px
 
 .p2
     @include font(400, 16px, 22.4px)
@@ -223,7 +225,7 @@ h1
     margin-right: -12px
     cursor: pointer
 
-.dp3
+.checked
     background-image: url('../../assets/icons/roller_icon.svg')
 
 .point
@@ -254,10 +256,10 @@ h1
 .pr2
     margin-right: 56px
 
-.dp3
-    background-image: url('../../assets/icons/roller_icon.svg')
 .pr3
     margin-right: 56px
+
+.text-checked
     color: #FE9013
 
 .pr4
@@ -320,6 +322,7 @@ h1
     user-select: none
 
 .form2 > input+label::before
+    cursor: pointer
     content: ''
     display: inline-block
     width: 16px
@@ -510,6 +513,12 @@ form > button
         max-width: 778px
         margin-bottom: 30px
 
+    section > .p2
+        max-width: 939px
+        margin-left: 0
+        font-size: 13px
+        line-height: 22px
+
     .info
         margin: 0
 
@@ -543,7 +552,7 @@ form > button
     .price
         margin-left: 65px
 
-    .pr1, .dp2
+    .pr1, .dp1
         display: none
 
     .btn1
@@ -685,6 +694,8 @@ form > button
 
     section > .p2
         margin-bottom: 30px
+        max-width: 600px
+        font-size: 16px
 
     .info
         margin-bottom: 30px
@@ -732,7 +743,7 @@ form > button
     .price
         margin-left: 15px
 
-    .dp1, .dp3, .pr2, .pr3
+    .dp1, .dp2, .dp3, .pr2, .pr3
         display: none
 
     .form1
@@ -755,12 +766,6 @@ form > button
 
     .content > .p-center
         margin-left: 0
-
-    .dp6
-        background-image: url('../../assets/icons/roller_icon.svg')
-    .pr6
-        margin-right: 70px
-        color: #FE9013
 
     /////////////////////////////////////////////////footer//////////////////////////////////////////////////
 
@@ -851,6 +856,7 @@ form > button
 
     section > .p2
         line-height: 22px
+        max-width: 300px
 
     .info
         font-size: 24px

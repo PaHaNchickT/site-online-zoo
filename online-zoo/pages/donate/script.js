@@ -29,7 +29,7 @@ document.querySelector('body').addEventListener("keyup", function (event) {
 document.querySelectorAll('.count > div').forEach(e => {
     e.addEventListener('mouseover', function () {
         e.querySelector('.point').style.backgroundColor = 'orange'
-    }) 
+    })
 })
 
 document.querySelectorAll('.count > div').forEach(e => {
@@ -49,13 +49,13 @@ const burgerSplitter = document.querySelector('.burger-splitter')
 const logo = document.querySelector('.logo')
 const by = document.querySelector('.by')
 
-burger.addEventListener('click', function() {
+burger.addEventListener('click', function () {
     burgerOpen()
 })
-burgerExit.addEventListener('click', function() {
+burgerExit.addEventListener('click', function () {
     burgerClose()
 })
-burgerSplitter.addEventListener('click', function() {
+burgerSplitter.addEventListener('click', function () {
     burgerClose()
 })
 
@@ -97,7 +97,6 @@ switch (window.screen.width) {
 }
 
 function pageReload() {
-    console.log('jopa')
     if (window.localStorage) {
         if (!localStorage.getItem('firstLoad')) {
             localStorage['firstLoad'] = true;
@@ -110,4 +109,67 @@ function pageReload() {
 
 window.addEventListener('resize', function () {
     pageReload()
+})
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////amount///////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////////////
+
+const count = document.querySelector('.count')
+const price = document.querySelector('.price')
+const inputAmount = document.querySelectorAll('input')[0]
+inputAmount.value = 100
+
+count.childNodes.forEach((e1, i1) => {
+    if (e1.className) {
+        e1.addEventListener('click', function () {
+            removeCh()
+            price.childNodes.forEach((e2, i2) => {
+                if (e2.className) {
+                    if (i1 === i2) {
+                        e2.classList.add('text-checked')
+                        inputAmount.value = e2.textContent.slice(1, e2.textContent.length)
+                    }
+                }
+            })
+            e1.classList.add('checked')
+        })
+    }
+})
+
+function removeCh() {
+    count.childNodes.forEach(e => {
+        if (e.className) {
+            e.classList.remove('checked')
+        }
+    })
+    price.childNodes.forEach(e => {
+        if (e.className) {
+            e.classList.remove('text-checked')
+        }
+    })
+}
+
+inputAmount.addEventListener('input', function () {
+    if (input.value.length > 4) {
+        input.value = input.value.slice(0, 4)
+    } else if (input.value.length === 0) {
+        removeCh()
+    }
+    count.childNodes.forEach((e1, i1) => {
+        if (e1.className) {
+            price.childNodes.forEach((e2, i2) => {
+                if (e2.className) {
+                    if (i1 === i2) {
+                        if (input.value === e2.textContent.slice(1, e2.textContent.length)) {
+                            removeCh()
+                            e2.classList.add('text-checked')
+                            e1.classList.add('checked')
+                            console.log(input.value)
+                        }
+                    }
+                }
+            })
+        }
+    })
 })
