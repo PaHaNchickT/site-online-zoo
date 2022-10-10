@@ -11,18 +11,20 @@ const pagdiv = document.querySelectorAll('.pag > div')
 
 ////////////////////////////////////////////////base/////////////////////////////////////////////////////
 
-body.addEventListener("keyup", function (event) {
-    if (inputfocus !== null && inputvalid !== null) {
-        input.style.borderColor = 'green'
-        input.style.color = 'green'
-        formbutton.style.color = 'green'
-        formbutton.style.borderColor = 'green'
+document.querySelector('body').addEventListener("keyup", function (event) {
+    if (document.querySelector('.email:focus') !== null && document.querySelector('.email:valid') !== null) {
+        document.querySelector('.email').style.borderColor = 'green'
+        document.querySelector('.email').style.color = 'green'
+        document.querySelector('form > button').style.color = 'green'
+        document.querySelector('form > button').style.borderColor = 'green'
+        console.log('valid')
     }
-    if (inputfocus !== null && inputinvalid !== null) {
-        input.style.borderColor = 'red'
-        input.style.color = 'red'
-        formbutton.style.color = 'red'
-        formbutton.style.borderColor = 'red'
+    if (document.querySelector('.email:focus') !== null && document.querySelector('.email:invalid') !== null) {
+        document.querySelector('.email').style.borderColor = 'red'
+        document.querySelector('.email').style.color = 'red'
+        document.querySelector('form > button').style.color = 'red'
+        document.querySelector('form > button').style.borderColor = 'red'
+        console.log('invalid')
     }
 })
 
