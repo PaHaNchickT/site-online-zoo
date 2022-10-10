@@ -153,7 +153,7 @@ function removeCh() {
 inputAmount.addEventListener('input', function () {
     if (input.value.length > 4) {
         input.value = input.value.slice(0, 4)
-    } else if (input.value.length === 0) {
+    } else if (input.value < 25) {
         removeCh()
     }
     count.childNodes.forEach((e1, i1) => {
@@ -165,7 +165,8 @@ inputAmount.addEventListener('input', function () {
                             removeCh()
                             e2.classList.add('text-checked')
                             e1.classList.add('checked')
-                            console.log(input.value)
+                        } else if((input.value > 25 && input.value < 50) || (input.value > 50 && input.value < 100) || (input.value > 100 && input.value < 250) || (input.value > 250 && input.value < 500) || (input.value > 500 && input.value < 1000) || (input.value > 1000 && input.value < 2000) || (input.value > 2000 && input.value < 5000)) {
+                            removeCh()
                         }
                     }
                 }
