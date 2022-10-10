@@ -60,15 +60,26 @@ burgerSplitter.addEventListener('click', function () {
 })
 
 function burgerOpen() {
+    burger.style.display = 'none'
     menu.style.display = 'block'
     by.style.display = 'block'
     burgerSplitter.style.display = 'block'
     burgerSplitter.style.opacity = '0.5'
     burgerExit.style.display = 'block'
+    menu.style.opacity = '0'
+    by.style.opacity = '0'
     logo.classList.add('burger-on')
+    logo.style.opacity = '0'
+    setTimeout(() => {
+        burgerSplitter.style.opacity = '0.5'
+        menu.style.opacity = '1'
+        by.style.opacity = '1'
+        logo.style.opacity = '1'
+    }, 50)
 }
 
 function burgerClose() {
+    burger.style.display = 'block'
     menu.style.display = 'none'
     by.style.display = 'none'
     burgerSplitter.style.display = 'none'
@@ -165,7 +176,7 @@ inputAmount.addEventListener('input', function () {
                             removeCh()
                             e2.classList.add('text-checked')
                             e1.classList.add('checked')
-                        } else if((input.value > 25 && input.value < 50) || (input.value > 50 && input.value < 100) || (input.value > 100 && input.value < 250) || (input.value > 250 && input.value < 500) || (input.value > 500 && input.value < 1000) || (input.value > 1000 && input.value < 2000) || (input.value > 2000 && input.value < 5000)) {
+                        } else if ((input.value > 25 && input.value < 50) || (input.value > 50 && input.value < 100) || (input.value > 100 && input.value < 250) || (input.value > 250 && input.value < 500) || (input.value > 500 && input.value < 1000) || (input.value > 1000 && input.value < 2000) || (input.value > 2000 && input.value < 5000)) {
                             removeCh()
                         }
                     }

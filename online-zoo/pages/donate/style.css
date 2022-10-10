@@ -67,6 +67,8 @@ ul, p, h1, h2, h3, h4, h5, h6, nav {
   padding: 0;
   margin-left: 64px;
   list-style: none;
+  -webkit-transition: 1s;
+  transition: 1s;
 }
 
 .donate {
@@ -112,6 +114,8 @@ a:hover {
       align-self: center;
   border-radius: 2px;
   z-index: 10;
+  -webkit-transition: 1s;
+  transition: 1s;
 }
 
 .petstory {
