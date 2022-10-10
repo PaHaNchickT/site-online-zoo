@@ -770,6 +770,8 @@ h4 {
 .slider-head {
   margin-bottom: 11px;
   background-repeat: no-repeat;
+  -webkit-transition: 1s;
+  transition: 1s;
 }
 
 .slider-itms > div > .p5 {
