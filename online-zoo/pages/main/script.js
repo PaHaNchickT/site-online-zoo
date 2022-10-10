@@ -321,8 +321,10 @@ function fbAnim(now, prev) {
     } else if (now < prev) {
         fbItemAnim(1)
     }
+    if (now > prev && (window.getComputedStyle(document.querySelector('.user-del')).display === 'none')) {
+        fbItemAnim(5)
+    }
 }
-console.log(window.getComputedStyle(document.querySelector('.user-del')).display)
 
 function fbItemAnim(n) {
     sliderItems.childNodes[n].style.transition = '0s'
@@ -340,7 +342,6 @@ function popupOpen(e) {
     userZero.style.display = 'block'
     splitter.style.display = 'block'
     fbExit.style.display = 'block'
-    splitter.style.opacity = '0.5'
     document.querySelector('html').style.overflowY = 'hidden'
     if (e.className !== 'user0') {
         userZero.querySelectorAll('p')[0].textContent = e.querySelectorAll('p')[0].textContent
@@ -348,8 +349,16 @@ function popupOpen(e) {
         userZero.querySelectorAll('p')[2].textContent = e.querySelectorAll('p')[2].textContent
         userZero.querySelector('div').style.backgroundImage = e.querySelector('div').style.backgroundImage
     }
+    userZero.style.transition = '0s'
+    userZero.style.opacity = '0'
+    setTimeout(() => {
+        userZero.style.transition = '0.5s'
+        userZero.style.opacity = '1'
+        splitter.style.opacity = '0.5'
+    }, 50)
 }
 function popupClose() {
+    splitter.style.opacity = '0'
     userZero.style.display = 'none'
     splitter.style.display = 'none'
     fbExit.style.display = 'none'
