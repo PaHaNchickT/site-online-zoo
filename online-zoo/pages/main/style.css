@@ -65,6 +65,8 @@ button:active {
   padding: 0;
   margin-left: 64px;
   list-style: none;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
 }
 
 .about {
@@ -110,6 +112,8 @@ a:hover {
       align-self: center;
   border-radius: 2px;
   z-index: 10;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
 }
 
 .petstory {

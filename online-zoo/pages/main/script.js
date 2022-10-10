@@ -401,15 +401,25 @@ burgerSplitter.addEventListener('click', function () {
 })
 
 function burgerOpen() {
+    burger.style.display = 'none'
     menu.style.display = 'block'
     by.style.display = 'block'
     burgerSplitter.style.display = 'block'
-    burgerSplitter.style.opacity = '0.5'
     burgerExit.style.display = 'block'
+    menu.style.opacity = '0'
+    by.style.opacity = '0'
     logo.classList.add('burger-on')
+    logo.style.opacity = '0'
+    setTimeout(() => {
+        burgerSplitter.style.opacity = '0.5'
+        menu.style.opacity = '1'
+        by.style.opacity = '1'
+        logo.style.opacity = '1'
+    }, 50)
 }
 
 function burgerClose() {
+    burger.style.display = 'block'
     menu.style.display = 'none'
     by.style.display = 'none'
     burgerSplitter.style.display = 'none'
