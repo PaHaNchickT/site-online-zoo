@@ -7,6 +7,7 @@ body {
   margin: 0;
   padding: 0;
   font-family: Roboto;
+  overflow: hidden;
 }
 
 .burger-splitter {
@@ -167,7 +168,7 @@ section > h2 {
 }
 
 section > .p2 {
-  max-width: 1139px;
+  width: 1139px;
   margin: 0 calc((100vw - 1139px)/2) 45px;
   letter-spacing: 0.08px;
   font-size: 12px;
@@ -974,6 +975,8 @@ form > button {
     display: block;
     width: 18px;
     height: 10px;
+    position: absolute;
+    left: calc((100vw - 18px)*0.97);
   }
   .panda {
     background-position: -275px -135px;
@@ -991,7 +994,7 @@ form > button {
   }
   section > .p2 {
     margin-bottom: 30px;
-    max-width: 600px;
+    max-width: calc(100vw - 60px);
     font-size: 16px;
   }
   .info {
@@ -1140,7 +1143,7 @@ form > button {
 @media screen and (max-width: 320px) {
   header {
     padding: 0 10px;
-    width: 300px;
+    max-width: 300px;
   }
   .panda {
     margin-top: 34px;
