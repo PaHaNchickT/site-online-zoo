@@ -245,7 +245,7 @@ let step
 /////////////////////////////////////////////fg-btn-engine/////////////////////////////////////////////
 
 function feedBack(event) {
-    step = (fbBase.offsetWidth - fbBtn.offsetWidth / 2 + 8) / 8 
+    step = (fbBase.offsetWidth - fbBtn.offsetWidth / 2 + 8) / 8
     if ((event.force === 1 || event.which === 1) && (Math.round(event.clientX - fbBase.getBoundingClientRect().left - fbBtn.offsetWidth / 2) >= 0) && (Math.round(event.clientX - fbBase.getBoundingClientRect().left + fbBtn.offsetWidth / 2) <= 598.5)) {
         if (Math.round(event.clientX - fbBase.getBoundingClientRect().left - fbBtn.offsetWidth / 2) >= 0 && Math.round(event.clientX - fbBase.getBoundingClientRect().left - fbBtn.offsetWidth / 2) < step) {
             fbBtn.style.left = '2px'
@@ -283,40 +283,11 @@ fbBg.addEventListener('touchmove', function (event) {
     feedBack(event.touches[0])
 })
 
-// fbBg.addEventListener('mousemove', function (event) {
-//     step = (fbBase.offsetWidth - fbBtn.offsetWidth / 2 + 8) / 8
-//     if (event.which === 1 && (Math.round(event.clientX - fbBase.getBoundingClientRect().left - fbBtn.offsetWidth / 2) >= 0) && (Math.round(event.clientX - fbBase.getBoundingClientRect().left + fbBtn.offsetWidth / 2) <= 598.5)) {
-//         if (Math.round(event.clientX - fbBase.getBoundingClientRect().left - fbBtn.offsetWidth / 2) >= 0 && Math.round(event.clientX - fbBase.getBoundingClientRect().left - fbBtn.offsetWidth / 2) < step) {
-//             fbBtn.style.left = '2px'
-//             fbFill(0)
-//         } else if (Math.round(event.clientX - fbBase.getBoundingClientRect().left - fbBtn.offsetWidth / 2) >= step && Math.round(event.clientX - fbBase.getBoundingClientRect().left - fbBtn.offsetWidth / 2) < 2 * step) {
-//             fbBtn.style.left = `${step}px`
-//             fbFill(1)
-//         } else if (Math.round(event.clientX - fbBase.getBoundingClientRect().left - fbBtn.offsetWidth / 2) >= 2 * step && Math.round(event.clientX - fbBase.getBoundingClientRect().left - fbBtn.offsetWidth / 2) < 3 * step) {
-//             fbBtn.style.left = `${2 * step}px`
-//             fbFill(2)
-//         } else if (Math.round(event.clientX - fbBase.getBoundingClientRect().left - fbBtn.offsetWidth / 2) >= 3 * step && Math.round(event.clientX - fbBase.getBoundingClientRect().left - fbBtn.offsetWidth / 2) < 4 * step) {
-//             fbBtn.style.left = `${3 * step}px`
-//             fbFill(3)
-//         } else if (Math.round(event.clientX - fbBase.getBoundingClientRect().left - fbBtn.offsetWidth / 2) >= 4 * step && Math.round(event.clientX - fbBase.getBoundingClientRect().left - fbBtn.offsetWidth / 2) < 5 * step) {
-//             fbBtn.style.left = `${4 * step}px`
-//             fbFill(4)
-//         } else if (Math.round(event.clientX - fbBase.getBoundingClientRect().left - fbBtn.offsetWidth / 2) >= 5 * step && Math.round(event.clientX - fbBase.getBoundingClientRect().left - fbBtn.offsetWidth / 2) < 6 * step) {
-//             fbBtn.style.left = `${5 * step}px`
-//             fbFill(5)
-//         } else if (Math.round(event.clientX - fbBase.getBoundingClientRect().left - fbBtn.offsetWidth / 2) >= 6 * step && Math.round(event.clientX - fbBase.getBoundingClientRect().left - fbBtn.offsetWidth / 2) < 7 * step) {
-//             fbBtn.style.left = `${6 * step}px`
-//             fbFill(6)
-//         } else if (Math.round(event.clientX - fbBase.getBoundingClientRect().left - fbBtn.offsetWidth / 2) >= 7 * step && Math.round(event.clientX - fbBase.getBoundingClientRect().left - fbBtn.offsetWidth / 2) < 8 * step) {
-//             fbBtn.style.left = `${7 * step}px`
-//             fbFill(7)
-//         }
-//     }
-// })
-
 /////////////////////////////////////////////fb-btn-filling/////////////////////////////////////////////
 
+let prev = 0
 function fbFill(num) {
+    fbAnim(num, prev)
     feedback.forEach((e, i) => {
         switch (i) {
             case num: {
@@ -332,8 +303,8 @@ function fbFill(num) {
                 fbInner(7, e)
             }; break
         }
-
     })
+    prev = num
 }
 
 fbFill(0)
@@ -342,6 +313,24 @@ function fbInner(pos, fb) {
     sliderItems.childNodes[pos].querySelectorAll('p')[1].textContent = `${fb.date}`
     sliderItems.childNodes[pos].querySelectorAll('p')[2].textContent = `${fb.text}`
     sliderItems.childNodes[pos].querySelector('div').style.backgroundImage = `url(${fb.icon})`
+}
+
+function fbAnim(now, prev) {
+    if (now > prev) {
+        fbItemAnim(7)
+    } else if (now < prev) {
+        fbItemAnim(1)
+    }
+}
+console.log(window.getComputedStyle(document.querySelector('.user-del')).display)
+
+function fbItemAnim(n) {
+    sliderItems.childNodes[n].style.transition = '0s'
+    sliderItems.childNodes[n].style.backgroundColor = '#fed2a3'
+    setTimeout(() => {
+        sliderItems.childNodes[n].style.transition = '1s'
+        sliderItems.childNodes[n].style.backgroundColor = '#F1F3F2'
+    }, 50)
 }
 
 //////////////////////////////////////////////popup///////////////////////////////////////////
