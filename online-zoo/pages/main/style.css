@@ -23,6 +23,10 @@ body {
   transition: 0.5s;
 }
 
+.link-off {
+  pointer-events: none;
+}
+
 header {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -71,8 +75,12 @@ button:active {
   transition: 0.5s;
 }
 
-.about {
+.about > a {
   color: orange;
+}
+
+.by > a, .petstory > a, .center > li > a, .map > a, .zoos > a, .donate > a, .contact > a {
+  color: white;
 }
 
 li, .by {
@@ -84,7 +92,6 @@ li, .by {
 }
 
 a:link, a:active, a:visited {
-  color: white;
   text-decoration: none;
 }
 

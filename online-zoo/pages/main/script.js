@@ -401,6 +401,8 @@ burgerSplitter.addEventListener('click', function () {
 })
 
 function burgerOpen() {
+    document.querySelector('.about').classList.remove('link-off')
+    document.querySelector('.about > a').style.color = 'black'
     burger.style.display = 'none'
     menu.style.display = 'block'
     by.style.display = 'block'
@@ -419,6 +421,7 @@ function burgerOpen() {
 }
 
 function burgerClose() {
+    document.querySelector('.about').classList.add('link-off')
     burger.style.display = 'block'
     menu.style.display = 'none'
     by.style.display = 'none'
