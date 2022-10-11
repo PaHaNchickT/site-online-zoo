@@ -34,6 +34,10 @@ button:hover {
   cursor: pointer;
 }
 
+.link-off {
+  pointer-events: none;
+}
+
 header {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -73,8 +77,12 @@ ul, p, h1, h2, h3, h4, h5, h6, nav {
   transition: 1s;
 }
 
-.donate {
+.donate > a {
   color: orange;
+}
+
+.by > a, .petstory > a, .center > li > a, .map > a, .zoos > a, .about > a, .contact > a {
+  color: white;
 }
 
 li, .by {
@@ -86,7 +94,6 @@ li, .by {
 }
 
 a:link, a:active, a:visited {
-  color: white;
   text-decoration: none;
 }
 

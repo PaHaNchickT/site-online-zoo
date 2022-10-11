@@ -69,6 +69,11 @@ button
     &:hover
         cursor: pointer
 
+.link-off
+    pointer-events: none
+
+///////////////////////////////////////////header//////////////////////////////////////////////
+
 header
     @include flex('', center)
     background-color: black
@@ -87,15 +92,16 @@ ul, p, h1, h2, h3, h4, h5, h6, nav
     list-style: none
     transition: 1s
 
-.donate
+.donate > a
     color: orange
+.by > a, .petstory > a, .center > li > a, .map > a, .zoos > a, .about > a, .contact > a
+    color: white
 
 li, .by
     @include font(500, 16px, 22.4px)
 
 a
     &:link, &:active, &:visited
-        color: white
         text-decoration: none
     &:hover
         color: orange
