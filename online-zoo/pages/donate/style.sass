@@ -1,0 +1,1031 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap')
+
+@mixin flex($just: flex-start, $align: stretch)
+    display: flex
+    justify-content: $just
+    align-items: $align
+
+@mixin font($w, $s, $h, $a: left, $ls: 0)
+    font-weight: $w
+    font-size: $s
+    line-height: $h
+    text-align: $a
+    letter-spacing: $ls
+
+@mixin img($s, $p: 0 0)
+    background-image: url($s)
+    background-repeat: no-repeat
+    background-position: $p
+
+@mixin flex($just: flex-start, $align: stretch)
+    display: flex
+    justify-content: $just
+    align-items: $align
+
+@mixin font($w, $s, $h, $a: left, $ls: 0)
+    font-weight: $w
+    font-size: $s
+    line-height: $h
+    text-align: $a
+    letter-spacing: $ls
+
+@mixin img($s, $p: 0 0)
+    background-image: url($s)
+    background-repeat: no-repeat
+    background-position: $p
+
+$desktop: 1000px
+$tablet: 640px
+$temp: 525px
+$mobile: 320px
+
+html
+    overflow-x: hidden
+    -webkit-tap-highlight-color: rgba(255, 255, 255, 0)
+    -webkit-tap-highlight-color: transparent
+
+body
+    margin: 0
+    padding: 0
+    font-family: Roboto
+    overflow: hidden
+
+.burger-splitter
+    display: none
+    background-color: black
+    opacity: 0
+    position: fixed
+    width: 100%
+    height: 100%
+    z-index: 10
+
+.btn1, .btn5
+    &:hover
+        background: #E47209
+    &:active
+        background-color: #4B9200
+
+button
+    &:hover
+        cursor: pointer
+
+.link-off
+    pointer-events: none
+
+///////////////////////////////////////////header//////////////////////////////////////////////
+
+header
+    @include flex('', center)
+    background-color: black
+    color: white
+    min-height: 80px
+    padding: 0 13.75%
+
+ul, p, h1, h2, h3, h4, h5, h6, nav
+    margin: 0
+
+.menu
+    @include flex(space-between)
+    flex-basis: 472px
+    padding: 0
+    margin-left: 64px
+    list-style: none
+    transition: 1s
+
+.donate > a
+    color: orange
+.by > a, .petstory > a, .center > li > a, .map > a, .zoos > a, .about > a, .contact > a
+    color: white
+
+li, .by
+    @include font(500, 16px, 22.4px)
+
+a
+    &:link, &:active, &:visited
+        text-decoration: none
+    &:hover
+        color: orange
+        cursor: pointer
+
+.logo
+    @include flex(center, center)
+    @include img('../../assets/icons/bamboo.svg', 8.5px 22px)
+    flex-basis: 80px
+    height: 49px
+    border: 1px solid white
+    align-self: center
+    border-radius: 2px
+    z-index: 10
+    transition: 1s
+
+.petstory
+    @include font(400, 19.01px, 22.82px, center)
+
+.by
+    text-align: right
+    flex-basis: 105px
+    flex-shrink: 0
+
+.empty
+    flex-basis: 445px
+    flex-shrink: 5
+
+div > p
+    vertical-align: bottom
+
+////////////////////////////////////////////section///////////////////////////////////////////
+
+.panda
+    @include img('../../assets/images/Giant Panda.png', 0 -198px)
+    height: 386px
+
+section
+    background: linear-gradient(315.75deg, rgba(254, 210, 144, 0.7) 30.06%, #FEBDAB 100.95%, rgba(254, 210, 144, 0.7) 106.36%), linear-gradient(315.75deg, rgba(254, 189, 171, 0.74) 30.06%, rgba(243, 169, 248, 0.66) 50.74%, #E0D8F0 80.49%, #EAF7FE 127.9%, #EAF7FE 149.54%), linear-gradient(315.75deg, rgba(254, 189, 171, 0.74) 30.06%, rgba(243, 169, 248, 0.66) 50.74%, #E0D8F0 80.49%, #EAF7FE 127.9%, #EAF7FE 149.54%)
+    min-height: 1442px
+    padding-top: 40px
+
+h2
+    @include font(400, 36px, 46.8px, center)
+    color: white
+
+section > h2
+    margin-bottom: 10px
+
+section > .p2
+    width: 1139px
+    margin: 0 calc((100vw - 1139px)/2) 45px
+    letter-spacing: 0.08px
+    font-size: 12px
+    line-height: 20px
+
+.p2
+    @include font(400, 16px, 22.4px)
+    color: white
+
+.info
+    color: #FE9013
+    text-align: left
+    margin: 0 219px
+
+.wrapper
+    margin: 60px auto 0 auto
+    background: rgba(255, 255, 255, 0.52)
+    backdrop-filter: blur(2px)
+    border-radius: 20px
+    min-height: 924px
+    max-width: 1160px
+    padding-top: 40px
+
+.content
+    margin: 0 92px
+
+h1
+    @include font(400, 48px, 57.6px, center)
+    color: #FE9013
+    margin-right: 12px
+
+.p1
+    @include font(400, 24px, 28.8px)
+    margin-top: 20px
+
+.items
+    margin: 60px 0 48px 215px
+    max-width: 532px
+    min-height: 246px
+    display: flex
+
+.str1
+    @include font(500, 72px, 57.6px)
+    margin-bottom: 10px
+
+.str2
+    @include font(400, 16px, 22.4px)
+    margin-bottom: 50px
+
+.itm1
+    @include flex(flex-end, center)
+    flex-direction: column
+
+.itm2
+    @include img('../../assets/icons/cross.svg', 10px 130px)
+    width: 24px
+
+.itm3
+    @include img('../../assets/images/animals-widget.png')
+    width: 284px
+    margin-left: 64px
+
+.content > p
+    color: black
+    text-align: left
+
+.count
+    @include flex(space-between, center)
+    max-width: 976px
+    margin-top: 17px
+    background-color: #72828E
+    border: 12.5px solid #404950
+    border-radius: 2px
+    height: 2px
+    padding-right: 15px
+
+.count > div
+    width: 40px
+    height: 40px
+    margin-right: -12px
+    cursor: pointer
+
+.checked
+    background-image: url('../../assets/icons/roller_icon.svg')
+
+.point
+    width: 10px
+    height: 10px
+    background-color: #FFEE2E
+    border-radius: 50%
+    position: relative
+    top: 15px
+    left: 15px
+
+.price
+    max-width: 960px
+
+.content > ul
+    padding: 0
+    list-style: none
+    margin-top: 12px
+    display: flex
+    flex-wrap: wrap
+
+.content > ul > li
+    @include font(500, 26px, 36.4px)
+
+.pr1
+    margin-right: 56px
+
+.pr2
+    margin-right: 56px
+
+.pr3
+    margin-right: 56px
+
+.text-checked
+    color: #FE9013
+
+.pr4
+    margin-right: 71px
+
+.pr5
+    margin-right: 71px
+
+.pr6
+    margin-right: 71px
+
+.pr7
+    margin-right: 85px
+
+.form1
+    width: 268px
+    margin: 50px auto 25px auto
+
+.form1 > input
+    width: 254px
+    height: 48px
+    padding-left: 9px
+    padding: auto 0 auto 9px
+    background: none
+    border: 1px solid #929699
+    background-image: url('../../assets/icons/dollar.svg')
+    background-repeat: no-repeat
+    background-position: 248px 17px
+    color: black
+    &::-webkit-outer-spin-button
+        -webkit-appearance: none
+        margin: 0
+    &::-webkit-inner-spin-button
+        -webkit-appearance: none
+        margin: 0
+    &::placeholder
+        @include font(400, 15px, 22.4px, '', 0.3px)
+        color: #929699
+    &:focus
+        background: none
+        background-image: url('../../assets/icons/dollar.svg')
+        background-repeat: no-repeat
+        background-position: 248px 17px
+
+.form2
+    margin: 36px auto 0
+    padding-left: 153px
+
+.form2 > input
+    position: absolute
+    width: 0
+    height: 0
+    z-index: -1
+    opacity: 0
+
+.form2 > input+label
+    display: inline-flex
+    align-items: center
+    user-select: none
+
+.form2 > input+label::before
+    cursor: pointer
+    content: ''
+    display: inline-block
+    width: 16px
+    height: 16px
+    border: 1px solid #FE9013
+    border-radius: 50%
+    margin-right: 10px
+    &:hover
+        cursor: pointer
+
+.form2 > input:checked+label::before
+    border-color: #FE9013
+    background-color: #FE9013
+
+.form2 > label
+    @include font(400, 16px, 22.4px)
+    margin-right: 45px
+
+.btn1
+    @include font(500, 15px, 22.4px, '', -0.3px)
+    background: linear-gradient(113.96deg, #F9804B 1.49%, #FE9013 101.44%)
+    border-radius: 25px
+    width: 298px
+    height: 54px
+    border: none
+    margin: 10px calc((100vw - 298px)/2 - 312px) 30px
+    color: white
+
+.content > .p-center
+    text-align: center
+
+/////////////////////////////////////////////footer//////////////////////////////////////////
+
+footer
+    @include flex(flex-start, flex-end)
+    position: relative
+    flex-wrap: wrap
+    min-height: 393px
+    background-color: black
+    padding: 0 calc((100vw - 1160px)/2) 0 calc((100vw - 1160px)/2 - 43px)
+    padding-bottom: 50px
+    z-index: 5
+
+.left
+    flex-basis: 298px
+    margin: 39px 0 0 43px
+
+.left > div
+    color: white
+    width: 80px
+
+.btn5
+    @include font(500, 15px, 22.4px, '', -0.3px)
+    color: white
+    background: linear-gradient(113.96deg, #F9804B 1.49%, #FE9013 101.44%)
+    border-radius: 5px
+    border: none
+    width: 298px
+    height: 54px
+    margin: 70px 0 35px
+
+.social > li
+    @include font(400, 16px, 22.4px)
+    color: white
+    list-style: none
+    height: 26px
+    padding-left: 38px
+    margin-top: 10px
+    background-repeat: no-repeat
+    @include flex('', flex-end)
+    &:hover
+        cursor: pointer
+        color: green
+
+ul
+    padding: 0
+
+ul > a
+
+.face
+    background-image: url('../../assets/images/fb.png')
+    &:hover
+        background-image: url('../../assets/images/fb-hover.png')
+    &::after
+        content: 'Facebook'
+
+.twit
+    background-image: url('../../assets/images/tw.png')
+    &:hover
+        background-image: url('../../assets/images/tw-hover.png')
+    &::after
+        content: 'Twitter'
+
+.inst
+    background-image: url('../../assets/images/in.png')
+    &:hover
+        background-image: url('../../assets/images/in-hover.png')
+    &::after
+        content: 'Instagram'
+
+.yotu
+    background-image: url('../../assets/images/yb.png')
+    &:hover
+        background-image: url('../../assets/images/yb-hover.png')
+    &::after
+        content: 'YouTube'
+
+.center
+    @include flex(space-between)
+    flex-basis: 360px
+    padding: 0
+    list-style: none
+    margin-left: 102px
+
+.right
+    margin-top: 40px
+    margin-left: 31px
+
+.right > h5
+    @include font(400, 24px, 28.8px)
+    color: white
+    margin-bottom: 14px
+
+.right > p
+    @include font(100, 16px, 20.8px)
+    color: white
+    margin: 10px 0 0 140px
+
+form
+    height: 42px
+    max-width: 369px
+    margin-bottom: 216px
+
+input
+    @include font(400, 15px, 22.4px, '', 0.3px)
+    width: 214px
+    height: 38px
+    background-color: black
+    border: 1px solid orange
+    padding-left: 10px
+    margin-right: 8px
+    color: white
+    &::placeholder
+        @include font(400, 15px, 22.4px, '', 0.3px)
+        color: #BDBDBD
+    &:focus
+        background-color: white
+
+form > button
+    @include font(400, 15px, 22.4px, '', 0.3px)
+    width: 129px
+    height: 42px
+    border: 1px solid black
+    color: black
+    border-radius: 5px
+    background: #F1F3F2
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////    
+//////////////////////////////////////////SMALL DESKTOP//////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////////////
+
+@media screen and (max-width: $desktop)
+    header
+        padding: 0
+        position: relative
+        z-index: 6
+
+    .logo
+        flex-basis: 87px
+        margin-left: 30px
+
+    .by
+        margin-right: 30px
+        margin-left: 10px
+
+    /////////////////////////////////////////////section/////////////////////////////////////////
+
+    .panda
+        background-position: -173px -193px
+        height: 390px
+
+    section
+        min-height: 1294px
+        padding: 40px 30px 0
+
+    section > h2
+        text-align: left
+        max-width: 778px
+        margin-bottom: 30px
+
+    section > .p2
+        max-width: 939px
+        margin-left: 0
+        font-size: 13px
+        line-height: 22px
+
+    .info
+        margin: 0
+
+    .wrapper
+        margin-top: 40px
+        padding: 0
+        padding-top: 20px
+        min-height: 900px
+
+    .p1
+        margin: 10px 0 0 47px
+
+    .content
+        margin: 0
+
+    .items
+        margin: 60px 0 48px calc((100vw - 532px)*0.42)
+
+    .content > .p2
+        margin-left: 65px
+
+    .count
+        margin-left: 65px
+        max-width: 770px
+
+    .count > div
+        position: relative
+        left: -16px
+        margin-right: -50px
+
+    .price
+        margin-left: 65px
+
+    .pr1, .dp1
+        display: none
+
+    .btn1
+        margin: 11px calc((100vw - 298px)/2 - 30px) 30px
+
+    .content > .p-center
+        margin-left: 0
+
+    /////////////////////////////////////////////footer//////////////////////////////////////////
+
+    footer
+        min-height: 444px
+        padding-bottom: 0
+        top: 0
+
+    .left
+        margin: 30px 0 60px
+        position: relative
+        left: 31px
+        top: 9px
+
+    .left > .logo
+        margin-left: 0
+
+    .center
+        flex-basis: 332px
+        margin: 0 280px 52px 35px
+
+    .right
+        margin: 0
+        position: absolute
+        top: 40px
+        left: calc((100vw - 397.39px)*0.95)
+
+    input
+        margin-right: 4px
+
+    .right > p
+        margin: 10px 0 0 170px
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////    
+//////////////////////////////////////////////TABLET/////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////////////
+
+@media screen and (max-width: $tablet)
+
+    header
+        min-height: 34px
+        padding: 0
+        justify-content: space-between
+        padding: 0 20px
+        position: fixed
+        width: 600px
+        z-index: 10
+        top: 0
+
+    header > .logo
+        background-position: 4px 14px
+        background-size: 5px
+        height: 29.03px
+        border: none
+        flex-basis: 46.93px
+        margin-left: 0
+
+    header > .logo > .petstory
+        @include font(400, 12.29px, 14.75px, center)
+
+    .empty, .by
+        display: none
+
+    .menu
+        display: none
+        position: fixed
+        height: 170px
+        margin: 0
+        left: 0
+        top: 0
+        padding-left: 10px
+        padding-top: 81px
+        padding-bottom: 77px
+        flex-direction: column
+        background-color: white
+        width: 100%
+    .menu > li > a, .by > a
+        color: black
+    .menu > li
+        color: black
+        margin-bottom: 15px
+    .by
+        z-index: 11
+        position: absolute
+        margin: 0
+        left: 10px
+        top: 267px
+    .burger-on
+        border: 1px solid orange !important
+        position: fixed
+        top: 10px
+        left: 10px
+        width: 64px
+        height: 41px !important
+    .burger-on > .petstory
+        font-size: 15.21px !important
+        line-height: 18.25px !important
+    .burger-on > .petstory > a
+        color: orange
+    .burger-exit
+        display: none
+        width: 14px
+        height: 14px
+        position: fixed
+        z-index: 11
+        background-image: url('../../assets/icons/fb-exit.svg')
+        right: 21.5px
+        top: 10px
+
+    .burger
+        @include img('../../assets/icons/burger_menu.svg')
+        background-repeat: repeat
+        display: block
+        width: 18px
+        height: 10px
+        position: absolute
+        left: calc((100vw - 18px)*0.97)
+
+    /////////////////////////////////////////////section/////////////////////////////////////////
+
+    .panda
+        background-position: -275px -135px
+        background-size: 1380px
+        height: 369px
+
+    section
+        min-height: 1302.5px
+        padding: 30px 20px 0
+
+    section > h2
+        font-size: 24px
+        line-height: 28px
+        margin-bottom: 20px
+
+    section > .p2
+        margin-bottom: 30px
+        max-width: calc(100vw - 60px)
+        font-size: 16px
+
+    .info
+        margin-bottom: 30px
+        font-size: 36px
+        line-height: 46.8px
+
+    .wrapper
+        margin-top: 0
+        padding: 0
+        padding-top: 30px
+        min-height: 888px
+
+    .content > h1
+        margin: 0 auto
+
+    .content > .p1
+        margin-top: 20px
+        text-align: center
+        margin-left: 0
+
+    .content > .p2
+        margin-left: 10px
+
+    .items
+        margin: 50px 0 41px calc((100vw - 284px)*0.075)
+        flex-wrap: wrap
+
+    .itm2
+        min-height: 150px
+
+    .itm3
+        min-height: 246px
+        margin-left: calc((100vw - 284px)*0.18)
+
+    .count
+        margin-left: 0
+        margin-top: 7px
+        max-width: 770px
+
+    .count > div
+        position: relative
+        left: 7px
+        margin-right: 0
+
+    .price
+        margin-left: 15px
+
+    .dp1, .dp2, .dp3, .pr2, .pr3
+        display: none
+
+    .form1
+        width: 170px
+        height: 38px
+        margin: 49px calc((100vw - 170px)/2 - 25px) 0
+
+    .form1 > input
+        width: 170px
+        height: 38px
+        padding-left: 6px
+        background-position: 158.5px 10px
+
+    .form2
+        margin-top: 35px
+        padding-left: calc((100vw - 369px)*0.55)
+
+    .btn1
+        margin: 10px calc((100vw - 298px)/2 - 20px) 29px
+
+    .content > .p-center
+        margin-left: 0
+
+    /////////////////////////////////////////////////footer//////////////////////////////////////////////////
+
+    .right > h5, .right > form
+        display: none
+
+    .face, .twit, .inst, .yotu
+        &::after
+            content: ''
+
+    footer
+        min-height: 282px
+        padding: 0 20px
+        justify-content: space-between
+        align-items: flex-start
+        align-content: flex-start
+
+    .left
+        margin: 0
+        margin-top: 12px
+        left: 0
+        top: 0
+
+    .btn5
+        margin-top: 33px
+
+    .social
+        position: absolute
+        top: 0
+        left: calc((100vw - 26px)*0.935)
+        height: 175px
+        display: flex
+        flex-direction: column
+        justify-content: space-between
+        margin-top: -11px
+
+    .social > li
+        width: 26px
+        padding: 0
+
+    .center
+        flex-basis: 298px
+        margin: 62px 280px 0px 0px
+
+    .right
+        top: 208px
+        left: calc((100vw - 397.39px)*0.915)
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////    
+////////////////////////////////////////////////TEMP/////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////////////
+
+@media screen and (max-width: $temp)
+    .watch
+        margin-top: 20px
+
+    .social
+        position: static
+
+    .center
+        margin: 0
+        margin-top: 20px
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////    
+//////////////////////////////////////////////MOBILE/////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////////////
+
+@media screen and (max-width: $mobile)
+
+    header
+        padding: 0 10px
+        max-width: 300px
+
+    /////////////////////////////////////////////section/////////////////////////////////////////
+
+    .panda
+        margin-top: 34px
+        background-position: -146px -92px
+        background-size: 238%
+        height: 187px
+
+    section
+        min-height: 1115px
+        padding: 30px 10px 0
+
+    section > h2
+        margin-bottom: 22px
+
+    section > .p2
+        line-height: 22px
+        max-width: 300px
+
+    .info
+        font-size: 24px
+        line-height: 28.8px
+
+    .wrapper
+        padding-top: 21px
+        min-height: 572px
+
+    .content > h1
+        font-size: 24px
+        line-height: 28.8px
+
+    .content > .p1
+        margin-top: 10px
+        font-size: 16px
+        line-height: 22.4px
+
+    .items
+        margin: 0
+        margin-top: 10.28px
+        max-width: 300px
+        min-height: 138.72px
+        justify-content: space-between
+
+    .itm2
+        min-height: 100px
+
+    .itm3
+        min-height: 100px
+
+    .str1
+        font-size: 40.6px
+        line-height: 32.48px
+        margin-bottom: 6.2px
+    .str2
+        font-size: 9.02px
+        line-height: 12.63px
+        margin-bottom: 27.5px
+
+    .itm1
+        flex-basis: 89.66px
+
+    .itm2
+        flex-basis: 50.19px
+        background-position: 6px 73px
+        background-size: 16%
+
+    .itm3
+        margin: 0
+        flex-basis: 160.15px
+        background-size: 100%
+
+    .content > .p2
+        margin: 0
+        margin-top: 3px
+
+    .count
+        margin-top: 8.5px
+        height: 1px
+        border: 6.5px solid #404950
+
+    .point
+        width: 5px
+        height: 5px
+        left: 7.5px
+        top: 7.5px
+
+    .count > div
+        position: relative
+        left: 3px
+        top: 0
+        margin-right: -8px
+        width: 20px
+        height: 20px
+        background-size: 20px
+        background-repeat: no-repeat
+
+    .price
+        margin-left: 7.5px
+        margin-top: 6px !important
+        max-width: 285px
+
+    .content > ul > li
+        font-size: 13px
+        line-height: 18.2px
+
+    .pr4
+        margin-right: 35px
+
+    .pr5
+        margin-right: 36.5px
+
+    .pr6
+        margin-right: 34px
+
+    .pr7
+        margin-right: 43px
+
+    .form1
+        width: 170px
+        height: 38px
+        margin: 25px calc((100vw - 170px)/2 - 15px) 0
+
+    .form2
+        margin-top: 27px
+        margin-left: 39px
+        padding-left: calc((100vw - 369px)*0.55)
+
+    .btn1
+        margin: 8px 1px 29px
+
+    .content > .p-center
+        margin-top: 0
+        width: 301px
+
+    ////////////////////////////////////////////////////footer//////////////////////////////////////////////////
+
+    footer
+        padding: 0
+
+    .left
+        position: relative
+        min-width: 320px
+        margin-top: 8px
+
+    .left > .logo
+        border: none
+        width: 128px
+        margin: 0 auto
+        background-position: 73px 10px
+
+    .btn5
+        margin: 72px 13px 0 9px
+        position: relative
+        z-index: 5
+
+    .social
+        position: absolute
+        width: 194px
+        margin: 0
+        top: 55px
+        left: calc((100vw - 194px)/2)
+        flex-direction: row
+        z-index: 1
+
+    .center
+        position: static
+        flex-basis: 278px
+        margin: 110px auto 20px
+
+    .right
+        position: absolute
+        top: 214px
+        left: calc((100vw - 214px)*0.915)
+
+    .right > p
+        margin: 0
+        font-size: 15px
+        line-height: 18px
+        margin-bottom: 13px
